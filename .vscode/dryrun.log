@@ -1,0 +1,5 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Users/brmohamm/Desktop/push-swap'
+gcc -Wall -Wextra -Werror  -o push_swap push_swap.c lstnew.c ft_strcmp.c ft_atoi.c
+make: Leaving directory `/Users/brmohamm/Desktop/push-swap'
+ 
