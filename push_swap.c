@@ -26,7 +26,6 @@ int main(int argc , char **argv)
 			a = a->next;
 			temp->next = a->next;
 			a->next = temp;
-			free (temp);
 			temp = NULL;
 		}
 
@@ -60,6 +59,35 @@ int main(int argc , char **argv)
 			temp->next = a;
 			a = temp;
 			temp = NULL;
+		}
+
+		if(ft_strcmp(argv[i],"ra") == 0) //ra send the first one in 'a' to the last
+		{
+			temp =ft_lstlast(a);
+			temp->next = a;
+			a = a->next;
+			temp->next->next = NULL;
+			temp = NULL; 
+
+		}
+
+		if(ft_strcmp(argv[i],"rb") == 0 && b != NULL) //rb send the first one in 'b' to the last
+		{
+			temp = ft_lstlast(b);
+			temp->next = b;
+			b = b->next;
+			temp->next->next = NULL;
+			temp = NULL;
+		}
+
+		///////---rr   ra and rb----////
+
+		if(ft_strcmp(argv[i],"rra") == 0) //rra send the last one in 'a' to the first
+		{
+			temp = ft_lstlast_beforlast(a);
+			temp->next->next = a;
+			a = temp->next;
+			temp->next = NULL;
 		}
 
 		///////////////////------showing------////////////////////
