@@ -3,6 +3,7 @@
 int main(int argc , char **argv)
 {
 	int i;
+	int g = 0;
 	t_list *a;
 	t_list *b;
 	t_list *new;
@@ -27,6 +28,19 @@ int main(int argc , char **argv)
 			i++;
 		}
 		i--;
+		tempa = a;
+		i = 0;
+		while(tempa)
+		{
+			tempa = tempa->next;
+			i++;
+		}
+		while(g < (i / 2))
+		{
+			pb(&a,&b);
+			write(1,"pb\n",3);
+			g++;
+		}
 		tempa = a;
 		while(tempa)
 		{
@@ -107,10 +121,17 @@ int main(int argc , char **argv)
 		i = 0;
 		tempa = a;
 		tempb = b;
-		while (tempa)
+		while (tempa || tempb)
 		{
-			printf("%d " , tempa->content);
-			tempa = tempa->next;
+			if (tempa == NULL)
+			{
+				printf("-");
+			}
+			else if( tempa->content )
+			{ 
+		   		printf("%d-" ,tempa->content);
+		   		tempa = tempa->next;
+			}
 		 	if (tempb == NULL)
 			{
 				printf(" \n");
