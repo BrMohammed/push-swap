@@ -7,16 +7,21 @@ static long	loop(const char *str, int i, int n)
 
 	result = 0;
 	help = 0;
-	while (str[n] >= '0' && str[n] <= '9')
+	if(str[n] >= '0' && str[n] <= '9')
 	{
-		help = 10 * help + (str[n] - '0');
-		if ((help / 10 != result) && (i == -1))
-			return (0);
-		if ((help / 10 != result) && (i == 1))
-			return (-1);
-		result = 10 * result + (str[n] - '0');
-		n++;
+		while (str[n] >= '0' && str[n] <= '9')
+		{
+			help = 10 * help + (str[n] - '0');
+			if ((help / 10 != result) && (i == -1))
+				return (0);
+			if ((help / 10 != result) && (i == 1))
+				return (-1);
+			result = 10 * result + (str[n] - '0');
+			n++;
+		}
 	}
+	else
+		return(-405);
 	return (result * i);
 }
 

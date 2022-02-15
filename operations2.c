@@ -35,3 +35,17 @@ void rrb(t_list **b) //rrb send the last one in 'b' to the first
 	var.temp->next = NULL;
 	var.temp = NULL;
 }
+
+void ss(t_list **a,t_list **b) //--ss-- sa and sb
+{
+	sa(a);
+	if(*b != NULL)
+		sb(b);
+}
+
+void rr(t_list **a,t_list **b) //---rr :  ra and rb----////
+{
+	ra(a);
+	if(*b != NULL)
+		rb(b);
+}

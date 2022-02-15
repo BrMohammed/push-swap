@@ -13,14 +13,20 @@ int main(int argc , char **argv)
 	i = 1;
 	b = NULL;
 	temp = NULL;
-	if (argc > 2 )
+	if (argc > 3 )
 	{
 		while (argv[i] && (argc - i - 1) != 0)
 		{
+			if(ft_atoi(argv[i]) == -405)
+			{
+				write(1,"Error\n",6);
+				exit(2);
+			}
 			new = ft_lstnew(ft_atoi(argv[i]));
 			ft_lstadd_back(&a,new);
 			i++;
 		}
+
 		if(ft_strcmp(argv[i],"sa") == 0) //sa revest the ferst and the seconde in 'a'
 		{
 			sa(&a);
@@ -33,9 +39,7 @@ int main(int argc , char **argv)
 
 		if(ft_strcmp(argv[i],"ss") == 0)//--ss-- sa and sb
 		{
-			sa(&a);
-			if( b != NULL)
-				sb(&b);
+			ss(&a,&b);
 		}
 
 		if(ft_strcmp(argv[i],"pb") == 0) //pb send the first one in 'a' to the last in 'b'
@@ -60,9 +64,7 @@ int main(int argc , char **argv)
 
 		if(ft_strcmp(argv[i],"rr") == 0) //---rr :  ra and rb----////
 		{
-			ra(&a);
-			if( b != NULL)
-				rb(&b);
+			rr(&a,&b);
 		}
 
 		if(ft_strcmp(argv[i],"rra") == 0) //rra send the last one in 'a' to the first
@@ -102,5 +104,7 @@ int main(int argc , char **argv)
 			i++;
 		}
 	}
+	else
+		write(1,"Error\n",6);
 	return(0);
 }
