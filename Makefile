@@ -23,7 +23,7 @@ fclean : clean
 re : fclean all
 
 #  github bigin
-
+# git pull --rebase origin main
 ADD = git add .
 
 read :=	@echo "Add Commit Plz !!" && read -p "-> " enter \

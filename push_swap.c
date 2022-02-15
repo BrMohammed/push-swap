@@ -28,10 +28,15 @@ int main(int argc , char **argv)
 
 		if(ft_strcmp(argv[i],"sb") == 0 && b != NULL) //sa revest the ferst and the seconde in 'b'
 		{
-			sa(&b);
+			sb(&b);
 		}
-		
-		//--ss-- sa and sb
+
+		if(ft_strcmp(argv[i],"ss") == 0)//--ss-- sa and sb
+		{
+			sa(&a);
+			if( b != NULL)
+				sb(&b);
+		}
 
 		if(ft_strcmp(argv[i],"pb") == 0) //pb send the first one in 'a' to the last in 'b'
 		{
@@ -53,7 +58,12 @@ int main(int argc , char **argv)
 			rb(&b);
 		}
 
-		///////---rr :  ra and rb----////
+		if(ft_strcmp(argv[i],"rr") == 0) //---rr :  ra and rb----////
+		{
+			ra(&a);
+			if( b != NULL)
+				rb(&b);
+		}
 
 		if(ft_strcmp(argv[i],"rra") == 0) //rra send the last one in 'a' to the first
 		{
@@ -65,7 +75,12 @@ int main(int argc , char **argv)
 			rrb(&b);
 		}
 
-		////////////-rrr : rra and rrb at the same time.----///////
+		if(ft_strcmp(argv[i],"rrr") == 0) //-rrr : rra and rrb at the same time.
+		{
+			rra(&a);
+			if( b != NULL)
+				rrb(&b);
+		}
 
 		///////////////////------showing------////////////////////
 		i = 0;
