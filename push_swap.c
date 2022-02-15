@@ -13,9 +13,9 @@ int main(int argc , char **argv)
 	i = 1;
 	b = NULL;
 	temp = NULL;
-	if (argc > 3 )
+	if (argc > 2)
 	{
-		while (argv[i] && (argc - i - 1) != 0)
+		while (argv[i])
 		{
 			if(ft_atoi(argv[i]) == -405)
 			{
@@ -25,6 +25,32 @@ int main(int argc , char **argv)
 			new = ft_lstnew(ft_atoi(argv[i]));
 			ft_lstadd_back(&a,new);
 			i++;
+		}
+		i--;
+		tempa = a;
+		while(tempa)
+		{
+			tempa = ft_lstlast(a);
+			if(a->content > tempa->content)
+			{
+				rra(&a);
+				write(1,"rra\n",4);
+				tempa = a;
+			}
+			if(a->content > a->next->content)
+			{
+				sa(&a);
+				write(1,"sa\n",3);
+				tempa = a;
+			}
+			temp = ft_lstlast_beforlast(a);
+			if(temp->content > temp->next->content)
+			{
+				rra(&a);
+				write(1,"rra\n",4);
+				tempa = a;
+			}
+			tempa = tempa->next;
 		}
 
 		if(ft_strcmp(argv[i],"sa") == 0) //sa revest the ferst and the seconde in 'a'
@@ -75,13 +101,6 @@ int main(int argc , char **argv)
 		if(ft_strcmp(argv[i],"rrb") == 0 && b != NULL) //rrb send the last one in 'b' to the first
 		{
 			rrb(&b);
-		}
-
-		if(ft_strcmp(argv[i],"rrr") == 0) //-rrr : rra and rrb at the same time.
-		{
-			rra(&a);
-			if( b != NULL)
-				rrb(&b);
 		}
 
 		///////////////////------showing------////////////////////

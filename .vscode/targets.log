@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Tue Feb 15 18:49:59 2022
+# Make data base, printed on Tue Feb 15 20:47:15 2022
 
 # Variables
 
@@ -43,11 +43,11 @@ ADD = git add .
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n0000h5m00041d/T/vscode-ipc-a601ea56-e1d9-4b69-a3f3-3786c8b4b013.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n0000h5m00041d/T/vscode-ipc-eec2fe34-5079-4713-990b-2959eb8ec850.sock
 # environment
 VSCODE_CWD = /
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.cprqYsVO8l/Render
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.mGNLbY5B5j/Render
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # makefile (from `Makefile', line 34)
@@ -63,7 +63,7 @@ ELECTRON_RUN_AS_NODE = 1
 # makefile (from `Makefile', line 29)
 read := @echo "Add Commit Plz !!" && read -p "-> " enter && git commit -m $${enter}
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.9SlRbkRPBx/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.UEXcFfMzsj/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -131,7 +131,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.1192
+XPC_SERVICE_NAME = com.microsoft.VSCode.1780
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -157,11 +157,11 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 57797
+VSCODE_PID = 2862
 # makefile (from `Makefile', line 7)
 FILES = push_swap.c lstnew.c ft_strcmp.c ft_atoi.c operations.c operations2.c operations3.c
 # variable set hash-table stats:
-# Load=74/1024=7%, Rehash=0, Collisions=1/101=1%
+# Load=74/1024=7%, Rehash=0, Collisions=1/107=1%
 
 # Pattern-specific Variable Values
 
@@ -200,7 +200,7 @@ operations.c:
 # Not a target:
 push_swap.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-15 18:47:21
+#  Last modified 2022-02-15 19:50:16
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -211,9 +211,9 @@ all: push_swap
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
 
 # Not a target:
 lstnew.c:
@@ -227,7 +227,7 @@ lstnew.c:
 # Not a target:
 ft_atoi.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-13 19:59:38
+#  Last modified 2022-02-15 19:34:16
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -235,7 +235,6 @@ ft_atoi.c:
 
 # Not a target:
 .SUFFIXES:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -298,11 +297,28 @@ clean:
 
 push_swap: push_swap.c lstnew.c ft_strcmp.c ft_atoi.c operations.c operations2.c operations3.c
 #  Implicit rule search has not been done.
-#  Last modified 2022-02-15 18:49:43
+#  Implicit/static pattern stem: `'
+#  Last modified 2022-02-15 19:49:54
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := push_swap
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := push_swap.c lstnew.c ft_strcmp.c ft_atoi.c operations.c operations2.c operations3.c
+# automatic
+# | := 
+# automatic
+# < := push_swap.c
+# automatic
+# ^ := push_swap.c lstnew.c ft_strcmp.c ft_atoi.c operations.c operations2.c operations3.c
+# automatic
+# ? := push_swap.c
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
 #  commands to execute (from `Makefile', line 13):
 	$(CC) $(CFLAGS)  -o $(NAME) $(FILES)
 	
@@ -310,14 +326,15 @@ push_swap: push_swap.c lstnew.c ft_strcmp.c ft_atoi.c operations.c operations2.c
 # Not a target:
 operations3.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-15 18:49:24
+#  Last modified 2022-02-15 19:42:25
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # files hash-table stats:
-# Load=16/1024=2%, Rehash=0, Collisions=0/40=0%
+ 
+# Load=16/1024=2%, Rehash=0, Collisions=0/41=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -329,6 +346,6 @@ operations3.c:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Feb 15 18:49:59 2022
+# Finished Make data base on Tue Feb 15 20:47:15 2022
 
  
