@@ -21,4 +21,19 @@ int	ft_strcmp( const char *s1, const char *s2);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 t_list	*ft_lstlast_beforlast(t_list *lst);
 
+void sa(t_list **a);
+void sb(t_list **b);
+void pb(t_list **a, t_list **b);
+void pa(t_list **a, t_list **b);
+void ra(t_list **a);
+void rb(t_list **b);
+void rra(t_list **a);
+void rrb(t_list **b);
+
+typedef struct s_variabl
+{
+	t_list *temp;
+
+} t_variabl;
+
 #endif

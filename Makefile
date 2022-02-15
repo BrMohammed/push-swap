@@ -4,7 +4,7 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-FILES = push_swap.c lstnew.c ft_strcmp.c ft_atoi.c
+FILES = push_swap.c lstnew.c ft_strcmp.c ft_atoi.c operations.c operations2.c
 
 RM = rm -f
 
