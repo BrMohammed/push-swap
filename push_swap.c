@@ -27,7 +27,11 @@ int main(int argc , char **argv)
 			ft_lstadd_back(&a,new);
 			i++;
 		}
-		i--;
+		if(check_double(a) == -1)
+		{
+			write(1,"Error\n",6);
+			exit(2);
+		}
 		tempa = a;
 		i = 0;
 		while(tempa)
@@ -35,6 +39,7 @@ int main(int argc , char **argv)
 			tempa = tempa->next;
 			i++;
 		}
+		
 		while(g < (i / 2))
 		{
 			pb(&a,&b);
@@ -67,55 +72,7 @@ int main(int argc , char **argv)
 			tempa = tempa->next;
 		}
 
-		if(ft_strcmp(argv[i],"sa") == 0) //sa revest the ferst and the seconde in 'a'
-		{
-			sa(&a);
-		}
-
-		if(ft_strcmp(argv[i],"sb") == 0 && b != NULL) //sa revest the ferst and the seconde in 'b'
-		{
-			sb(&b);
-		}
-
-		if(ft_strcmp(argv[i],"ss") == 0)//--ss-- sa and sb
-		{
-			ss(&a,&b);
-		}
-
-		if(ft_strcmp(argv[i],"pb") == 0) //pb send the first one in 'a' to the last in 'b'
-		{
-			pb(&a,&b);
-		}
-
-		if(ft_strcmp(argv[i],"pa") == 0 && b != NULL) //pa send the first one in 'b' to the last in 'a'
-		{
-			pa(&a,&b);
-		}
-
-		if(ft_strcmp(argv[i],"ra") == 0) //ra send the first one in 'a' to the last
-		{
-			ra(&a);
-		}
-
-		if(ft_strcmp(argv[i],"rb") == 0 && b != NULL) //rb send the first one in 'b' to the last
-		{
-			rb(&b);
-		}
-
-		if(ft_strcmp(argv[i],"rr") == 0) //---rr :  ra and rb----////
-		{
-			rr(&a,&b);
-		}
-
-		if(ft_strcmp(argv[i],"rra") == 0) //rra send the last one in 'a' to the first
-		{
-			rra(&a);
-		}
-
-		if(ft_strcmp(argv[i],"rrb") == 0 && b != NULL) //rrb send the last one in 'b' to the first
-		{
-			rrb(&b);
-		}
+		
 
 		///////////////////------showing------////////////////////
 		i = 0;
