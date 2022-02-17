@@ -3,7 +3,7 @@
 int main(int argc , char **argv)
 {
 	int i;
-	//int g;
+	int moves;
 	t_list *a;
 	t_list *b;
 	t_list *new;
@@ -14,6 +14,7 @@ int main(int argc , char **argv)
 	i = 1;
 	b = NULL;
 	temp = NULL;
+	moves = 0;
 	if (argc > 2)
 	{
 		while (argv[i])
@@ -45,7 +46,7 @@ int main(int argc , char **argv)
 		// 	pb(&a,&b);
 		// 	write(1,"pb\n",3);
 		// 	g++;
-		// } 5 10 8 20 1 3 4 9 ---- 5 8 9 2 20
+		// } 5 10 8 20 1 3 4 9 ---- 5 8 9 2 20 ---** 5 6 7 22 11
 		/////////////////////////////////////
 
 		
@@ -57,6 +58,7 @@ int main(int argc , char **argv)
 			{
 				sa(&a);
 				write(1,"sa\n",3);
+				moves++;
 			}
 			temp = a;
 			while(temp)
@@ -68,17 +70,19 @@ int main(int argc , char **argv)
 					if(mediantemp->next == NULL)
 						break;
 				}
-				printf("pivot..%d\n" ,mediantemp->content);
+				//printf("pivot..%d\n" ,mediantemp->content);
 				if(mediantemp->content > tempa->content || a->content > tempa->content)
 				{
 					rra(&a);
 					write(1,"rra\n",4);
+					moves++;
 				}
 				temp = temp->next;
 			}
 			temp = mediantemp;
 			while(temp)
 			{
+				
 				if(temp->next != NULL)
 				{
 					if(temp->content > temp->next->content)
@@ -88,6 +92,7 @@ int main(int argc , char **argv)
 						{
 							pb(&a,&b);
 							write(1,"pb\n",3);
+							moves++;
 							tempa = a;
 						}
 						break;
@@ -95,32 +100,44 @@ int main(int argc , char **argv)
 				}
 				temp = temp->next;
 			}
+			
 			temp = b;
 			if(b)
 			{
+				
 				while(temp)
 				{
 					if(a->content < temp->content)
 					{
 						pb(&a,&b);
 						write(1,"pb\n",3);
+						moves++;
 					}
 					temp = temp->next;
 				}
-				if(b->content < b->next->content)
+				if(b->next != NULL)
 				{
-					rb(&b);
-					write(1,"rrb\n",4);
+					if(b->content < b->next->content)
+					{
+						rb(&b);
+						write(1,"rrb\n",4);
+						moves++;
+					}
 				}
+				
 			}
 			tempa = tempa->next;
 		}
+		
 		temp = b;
-		while(temp)
+		while(temp && b)
 		{
 			pa(&a,&b);
+			write(1,"pa\n",3);
 			temp = temp->next;
+			moves++;
 		}
+		
 		///////////////////------showing------////////////////////
 		i = 0;
 		tempa = a;
@@ -150,5 +167,6 @@ int main(int argc , char **argv)
 	}
 	else
 		write(1,"Error\n",6);
+	printf("*Moves* : %d\n" , moves);
 	return(0);
 }
