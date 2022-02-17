@@ -90,7 +90,31 @@ int main(int argc , char **argv)
 				}
 				temp = temp->next;
 			}
+			temp = b;
+			if(b)
+			{
+				while(temp)
+				{
+					if(a->content < temp->content)
+					{
+						pb(&a,&b);
+						write(1,"pb\n",3);
+					}
+					temp = temp->next;
+				}
+				if(b->content < b->next->content)
+				{
+					rb(&b);
+					write(1,"rrb\n",4);
+				}
+			}
 			tempa = tempa->next;
+		}
+		temp = b;
+		while(temp)
+		{
+			pa(&a,&b);
+			temp = temp->next;
 		}
 		///////////////////------showing------////////////////////
 		i = 0;
@@ -100,7 +124,7 @@ int main(int argc , char **argv)
 		{
 			if (tempa == NULL)
 			{
-				printf("-");
+				printf(" -");
 			}
 			else if( tempa->content )
 			{ 
