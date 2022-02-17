@@ -52,24 +52,29 @@ int main(int argc , char **argv)
 		tempa = a;
 		while(tempa)
 		{
-			mediantemp = a;
 			tempa = ft_lstlast(a);
 			if(a->content > a->next->content)
 			{
 				sa(&a);
 				write(1,"sa\n",3);
 			}
-			while(mediantemp->content < mediantemp->next->content)
+			temp = a;
+			while(temp)
 			{
-				mediantemp = mediantemp->next;
-				if(mediantemp->next == NULL)
-					break;
-			}
-			printf("pivot..%d\n" ,mediantemp->content);
-			if(mediantemp->content > tempa->content || a->content > tempa->content)
-			{
-				rra(&a);
-				write(1,"rra\n",4);
+				mediantemp = a;
+				while(mediantemp->content < mediantemp->next->content)
+				{
+					mediantemp = mediantemp->next;
+					if(mediantemp->next == NULL)
+						break;
+				}
+				printf("pivot..%d\n" ,mediantemp->content);
+				if(mediantemp->content > tempa->content || a->content > tempa->content)
+				{
+					rra(&a);
+					write(1,"rra\n",4);
+				}
+				temp = temp->next;
 			}
 			temp = mediantemp;
 			while(temp)
