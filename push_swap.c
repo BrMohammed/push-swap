@@ -48,7 +48,7 @@ int main(int argc , char **argv)
 		// } 5 10 8 20 1 3 4 9 ---- 5 8 9 2 20
 		/////////////////////////////////////
 
-
+		
 		tempa = a;
 		while(tempa)
 		{
@@ -62,6 +62,8 @@ int main(int argc , char **argv)
 			while(mediantemp->content < mediantemp->next->content)
 			{
 				mediantemp = mediantemp->next;
+				if(mediantemp->next == NULL)
+					break;
 			}
 			printf("pivot..%d\n" ,mediantemp->content);
 			if(mediantemp->content > tempa->content || a->content > tempa->content)
@@ -72,16 +74,19 @@ int main(int argc , char **argv)
 			temp = mediantemp;
 			while(temp)
 			{
-				if(temp->content > temp->next->content)
+				if(temp->next != NULL)
 				{
-					tempa = a;
-					while(tempa->content != mediantemp->content)
+					if(temp->content > temp->next->content)
 					{
-						pb(&a,&b);
-						write(1,"pb\n",3);
 						tempa = a;
+						while(tempa->content != mediantemp->content)
+						{
+							pb(&a,&b);
+							write(1,"pb\n",3);
+							tempa = a;
+						}
+						break;
 					}
-					break;
 				}
 				temp = temp->next;
 			}
