@@ -3,7 +3,7 @@
 int main(int argc , char **argv)
 {
 	int i;
-	int g = 0;
+	//int g;
 	t_list *a;
 	t_list *b;
 	t_list *new;
@@ -45,10 +45,48 @@ int main(int argc , char **argv)
 		// 	pb(&a,&b);
 		// 	write(1,"pb\n",3);
 		// 	g++;
-		// }
+		// } 5 10 8 20 1 3 4 9 ---- 5 8 9 2 20
 		/////////////////////////////////////
 
-		
+
+		tempa = a;
+		while(tempa)
+		{
+			mediantemp = a;
+			tempa = ft_lstlast(a);
+			if(a->content > a->next->content)
+			{
+				sa(&a);
+				write(1,"sa\n",3);
+			}
+			while(mediantemp->content < mediantemp->next->content)
+			{
+				mediantemp = mediantemp->next;
+			}
+			printf("pivot..%d\n" ,mediantemp->content);
+			if(mediantemp->content > tempa->content || a->content > tempa->content)
+			{
+				rra(&a);
+				write(1,"rra\n",4);
+			}
+			temp = mediantemp;
+			while(temp)
+			{
+				if(temp->content > temp->next->content)
+				{
+					tempa = a;
+					while(tempa->content != mediantemp->content)
+					{
+						pb(&a,&b);
+						write(1,"pb\n",3);
+						tempa = a;
+					}
+					break;
+				}
+				temp = temp->next;
+			}
+			tempa = tempa->next;
+		}
 		///////////////////------showing------////////////////////
 		i = 0;
 		tempa = a;
