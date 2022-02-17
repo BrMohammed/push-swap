@@ -9,7 +9,7 @@ int main(int argc , char **argv)
 	t_list *new;
 	t_list *temp;
 	t_list *tempa;
-	t_list *tempb;
+	t_list *mediantemp;
 
 	i = 1;
 	b = NULL;
@@ -34,51 +34,26 @@ int main(int argc , char **argv)
 		}
 		tempa = a;
 		i = 0;
+		/////////calcule the length ////////
 		while(tempa)
 		{
 			tempa = tempa->next;
 			i++;
 		}
-		
-		while(g < (i / 2))
-		{
-			pb(&a,&b);
-			write(1,"pb\n",3);
-			g++;
-		}
-		tempa = a;
-		while(tempa)
-		{
-			tempa = ft_lstlast(a);
-			if(a->content > tempa->content)
-			{
-				rra(&a);
-				write(1,"rra\n",4);
-				tempa = a;
-			}
-			if(a->content > a->next->content)
-			{
-				sa(&a);
-				write(1,"sa\n",3);
-				tempa = a;
-			}
-			temp = ft_lstlast_beforlast(a);
-			if(temp->content > temp->next->content)
-			{
-				rra(&a);
-				write(1,"rra\n",4);
-				tempa = a;
-			}
-			tempa = tempa->next;
-		}
+		// while(g < (i / 2))
+		// {
+		// 	pb(&a,&b);
+		// 	write(1,"pb\n",3);
+		// 	g++;
+		// }
+		/////////////////////////////////////
 
 		
-
 		///////////////////------showing------////////////////////
 		i = 0;
 		tempa = a;
-		tempb = b;
-		while (tempa || tempb)
+		mediantemp = b;
+		while (tempa || mediantemp)
 		{
 			if (tempa == NULL)
 			{
@@ -89,14 +64,14 @@ int main(int argc , char **argv)
 		   		printf("%d-" ,tempa->content);
 		   		tempa = tempa->next;
 			}
-		 	if (tempb == NULL)
+		 	if (mediantemp == NULL)
 			{
 				printf(" \n");
 			}
-			else if( tempb->content )
+			else if( mediantemp->content )
 			{ 
-		   		printf("%d\n" ,tempb->content);
-		   		tempb = tempb->next;
+		   		printf("%d\n" ,mediantemp->content);
+		   		mediantemp = mediantemp->next;
 			}
 			i++;
 		}
