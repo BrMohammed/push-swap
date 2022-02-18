@@ -1,5 +1,7 @@
 # include "push_swap.h"
 
+
+
 int main(int argc , char **argv)
 {
 	int i;
@@ -100,7 +102,6 @@ int main(int argc , char **argv)
 				}
 				temp = temp->next;
 			}
-			
 			temp = b;
 			if(b)
 			{
@@ -117,25 +118,47 @@ int main(int argc , char **argv)
 				}
 				if(b->next != NULL)
 				{
-					if(b->content < b->next->content)
-					{
-						rb(&b);
-						write(1,"rrb\n",4);
-						moves++;
-					}
+						if(b->content < b->next->content)
+						{
+							sb(&a);
+							write(1,"sa\n",3);
+							moves++;
+						}
+						temp = b;
+						while(temp)
+						{
+							
+							mediantemp = b;
+							while(mediantemp->content > mediantemp->next->content)
+							{
+								mediantemp = mediantemp->next;
+								if(mediantemp->next == NULL)
+								break;
+							}
+							//printf("pivot..b..%d\n" ,mediantemp->content);
+							if(mediantemp->content < temp->content || b->content < temp->content)
+							{
+								rrb(&b);
+								write(1,"rra\n",4);
+								moves++;
+							}
+							temp = temp->next;
+						}
+				}	
+			}
+			temp = b;
+			if(tempa->next == NULL && b)
+			{
+				while(temp && b)
+				{
+					pa(&a,&b);
+					write(1,"pa\n",3);
+					temp = temp->next;
+					moves++;
 				}
-				
+				tempa = a;
 			}
 			tempa = tempa->next;
-		}
-		
-		temp = b;
-		while(temp && b)
-		{
-			pa(&a,&b);
-			write(1,"pa\n",3);
-			temp = temp->next;
-			moves++;
 		}
 		
 		///////////////////------showing------////////////////////
@@ -148,7 +171,7 @@ int main(int argc , char **argv)
 			{
 				printf(" -");
 			}
-			else if( tempa->content )
+			else
 			{ 
 		   		printf("%d-" ,tempa->content);
 		   		tempa = tempa->next;
