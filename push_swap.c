@@ -68,7 +68,7 @@ int main(int argc , char **argv)
 					if(mediantemp->next == NULL)
 						break;
 				}
-				//printf("pivot..%d\n" ,mediantemp->content);
+				printf("pivot..%d\n" ,mediantemp->content);
 				if(a->content > a->next->content)
 				{
 					sa(&a);
@@ -90,12 +90,6 @@ int main(int argc , char **argv)
 					write(1,"ra\n",3);
 					moves++;
 					temp = a;
-				}
-				if(a->content > a->next->content)
-				{
-					sa(&a);
-					write(1,"sa\n",3);
-					moves++;
 				}
 				temp = temp->next;
 			}
@@ -148,7 +142,7 @@ int main(int argc , char **argv)
 								if(mediantemp->next == NULL)
 								break;
 							}
-							//printf("pivotD..%d\n" ,mediantemp->content);
+							printf("pivotD..%d\n" ,mediantemp->content);
 							if(b->content < b->next->content)
 							{
 								sb(&b);
@@ -171,13 +165,6 @@ int main(int argc , char **argv)
 								write(1,"rb\n",3);
 								moves++;
 								temp = b;
-							}
-							if(b->content < b->next->content)
-							{
-								sb(&b);
-								write(1,"sb\n",3);
-								moves++;
-								//temp = a;
 							}
 							temp = temp->next;
 						}
