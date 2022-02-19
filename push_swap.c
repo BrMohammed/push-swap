@@ -60,6 +60,7 @@ int main(int argc , char **argv)
 			temp = a;
 			while(temp)
 			{
+				temp = ft_lstlast(a);
 				mediantemp = a;
 				while(mediantemp->content < mediantemp->next->content )
 				{
@@ -68,27 +69,34 @@ int main(int argc , char **argv)
 						break;
 				}
 				//printf("pivot..%d\n" ,mediantemp->content);
-				if(mediantemp->content > tempa->content || a->content > tempa->content)
+				if(a->content > a->next->content)
+				{
+					sa(&a);
+					write(1,"sa\n",3);
+					moves++;
+				}
+				tempa = ft_lstlast(a);
+				if(mediantemp->content > tempa->content)
 				{
 					rra(&a);
 					write(1,"rra\n",4);
 					moves++;
+					temp = a;
 				}
-				if(a->content > tempa->content)
+				tempa = ft_lstlast(a);
+				if(a->content > tempa->content && a->content > mediantemp->content)
 				{
 					ra(&a);
-					write(1,"ra\n",4);
+					write(1,"ra\n",3);
 					moves++;
+					temp = a;
 				}
 				if(a->content > a->next->content)
 				{
 					sa(&a);
 					write(1,"sa\n",3);
 					moves++;
-				
 				}
-				
-				
 				temp = temp->next;
 			}
 			temp = mediantemp;
@@ -128,29 +136,48 @@ int main(int argc , char **argv)
 				}
 				if(b->next != NULL)
 				{
-						if(b->content < b->next->content)
-						{
-							sb(&a);
-							write(1,"sa\n",3);
-							moves++;
-						}
+						tempb = ft_lstlast(b);
 						temp = b;
 						while(temp)
 						{
+							temp = ft_lstlast(b);
 							mediantemp = b;
-							while(mediantemp->content > mediantemp->next->content)
+							while(mediantemp->content > mediantemp->next->content )
 							{
 								mediantemp = mediantemp->next;
 								if(mediantemp->next == NULL)
 								break;
 							}
-							//printf("pivot..b..%d\n" ,mediantemp->content);
+							//printf("pivotD..%d\n" ,mediantemp->content);
+							if(b->content < b->next->content)
+							{
+								sb(&b);
+								write(1,"sb\n",3);
+								moves++;
+								//temp = a;
+							}
 							tempb = ft_lstlast(b);
-							if(mediantemp->content < tempb->content || b->content < tempb->content)
+							if(mediantemp->content < tempb->content)
 							{
 								rrb(&b);
 								write(1,"rra\n",4);
 								moves++;
+								temp = b;
+							}
+							tempb = ft_lstlast(b);
+							if(b->content < tempb->content && b->content < mediantemp->content)
+							{
+								rb(&b);
+								write(1,"rb\n",3);
+								moves++;
+								temp = b;
+							}
+							if(b->content < b->next->content)
+							{
+								sb(&b);
+								write(1,"sb\n",3);
+								moves++;
+								//temp = a;
 							}
 							temp = temp->next;
 						}
