@@ -96,38 +96,29 @@ int main(int argc , char **argv)
 			temp = mediantemp;
 			while(temp)
 			{
-				
 				if(temp->next != NULL)
 				{
-					if(temp->content > temp->next->content)
+					if(temp->content > temp->next->content )
 					{
-						tempa = a;
-						while(tempa->content != mediantemp->content)
+						//tempa = a;
+						//tempa = ft_lstlast(a);
+						while(a->content < mediantemp->content )
 						{
 							pb(&a,&b);
 							write(1,"pb\n",3);
 							moves++;
 							tempa = a;
+							temp = a;
 						}
-						break; 
+						//break; 
 					}
 				}
+
 				temp = temp->next;
 			}
 			temp = b;
 			if(b)
 			{
-				
-				while(temp)
-				{
-					if(a->content < temp->content)
-					{
-						pb(&a,&b);
-						write(1,"pb\n",3);
-						moves++;
-					}
-					temp = temp->next;
-				}
 				if(b->next != NULL)
 				{
 						tempb = ft_lstlast(b);
@@ -148,7 +139,6 @@ int main(int argc , char **argv)
 								sb(&b);
 								write(1,"sb\n",3);
 								moves++;
-								//temp = a;
 							}
 							tempb = ft_lstlast(b);
 							if(mediantemp->content < tempb->content)
@@ -179,8 +169,8 @@ int main(int argc , char **argv)
 					write(1,"pa\n",3);
 					temp = temp->next;
 					moves++;
+					tempa = a;
 				}
-				tempa = a;
 			}
 			tempa = tempa->next;
 		}
