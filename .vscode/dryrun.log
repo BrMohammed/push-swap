@@ -1,6 +1,5 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/brmohamm/Desktop/push-swap'
 make: `push_swap' is up to date.
- 
 make: Leaving directory `/Users/brmohamm/Desktop/push-swap'
  

@@ -12,6 +12,7 @@ int main(int argc , char **argv)
 	t_list *temp;
 	t_list *tempa;
 	t_list *mediantemp;
+	t_list *tempb;
 
 	i = 1;
 	b = NULL;
@@ -56,17 +57,11 @@ int main(int argc , char **argv)
 		while(tempa)
 		{
 			tempa = ft_lstlast(a);
-			if(a->content > a->next->content)
-			{
-				sa(&a);
-				write(1,"sa\n",3);
-				moves++;
-			}
 			temp = a;
 			while(temp)
 			{
 				mediantemp = a;
-				while(mediantemp->content < mediantemp->next->content)
+				while(mediantemp->content < mediantemp->next->content )
 				{
 					mediantemp = mediantemp->next;
 					if(mediantemp->next == NULL)
@@ -79,6 +74,21 @@ int main(int argc , char **argv)
 					write(1,"rra\n",4);
 					moves++;
 				}
+				if(a->content > tempa->content)
+				{
+					ra(&a);
+					write(1,"ra\n",4);
+					moves++;
+				}
+				if(a->content > a->next->content)
+				{
+					sa(&a);
+					write(1,"sa\n",3);
+					moves++;
+				
+				}
+				
+				
 				temp = temp->next;
 			}
 			temp = mediantemp;
@@ -97,7 +107,7 @@ int main(int argc , char **argv)
 							moves++;
 							tempa = a;
 						}
-						break;
+						break; 
 					}
 				}
 				temp = temp->next;
@@ -127,7 +137,6 @@ int main(int argc , char **argv)
 						temp = b;
 						while(temp)
 						{
-							
 							mediantemp = b;
 							while(mediantemp->content > mediantemp->next->content)
 							{
@@ -136,7 +145,8 @@ int main(int argc , char **argv)
 								break;
 							}
 							//printf("pivot..b..%d\n" ,mediantemp->content);
-							if(mediantemp->content < temp->content || b->content < temp->content)
+							tempb = ft_lstlast(b);
+							if(mediantemp->content < tempb->content || b->content < tempb->content)
 							{
 								rrb(&b);
 								write(1,"rra\n",4);

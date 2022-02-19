@@ -1,10 +1,10 @@
 NAME = push_swap
-
+# -fsanitize=address
 CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-FILES = push_swap.c lstnew.c ft_strcmp.c ft_atoi.c operations.c operations2.c operations3.c
+FILES = push_swap.c lstnew.c ft_strcmp.c ft_atoi.c operations.c operations2.c operations3.c 
 
 RM = rm -f
 
