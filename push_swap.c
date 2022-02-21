@@ -48,7 +48,6 @@ int main(int argc , char **argv)
 		insert_the_index(a,i);
 		//int g = 1;
 		t = 0;
-		tempa = a;
 		while(t < i)
 		{
 			temp = a;
@@ -67,7 +66,7 @@ int main(int argc , char **argv)
 			if(b)
 			{
 				tempb = b;
-				while(tempb->next != NULL)
+				while(tempb)
 				{
 					if(temp->index == tempb->index)
 					{
@@ -86,10 +85,14 @@ int main(int argc , char **argv)
 				while(temp->index != a->index)
 				{
 					pb(&a,&b);
+					write(1,"pb\n",3);
+					moves++;
 				}
 				if(temp->index == a->index)
 				{
 					ra(&a);
+					write(1,"ra\n",3);
+					moves++;
 				}
 			}
 			else
@@ -101,11 +104,17 @@ int main(int argc , char **argv)
 				while(temp->index != b->index)
 				{
 					rrb(&b);
+					write(1,"rrb\n",4);
+					moves++;
 				}
 				if(temp->index == b->index)
 				{
 					pa(&a,&b);
+					write(1,"pa\n",3);
+					moves++;
 					ra(&a);
+					write(1,"ra\n",3);
+					moves++;
 				}
 			}
 			t++;
@@ -114,6 +123,7 @@ int main(int argc , char **argv)
 		i = 0;
 		tempa = a;
 		mediantemp = b;
+		printf("---------------------------------\nA\t\t\tB\n\n");
 		while (tempa || mediantemp)
 		{
 			if (tempa == NULL)
@@ -131,7 +141,7 @@ int main(int argc , char **argv)
 			}
 			else if( mediantemp->content )
 			{ 
-		   		printf("*** %d : %d -> %d\n" ,mediantemp->content,mediantemp->index,mediantemp->moved);
+		   		printf("\t\t*** %d : %d -> %d\n" ,mediantemp->content,mediantemp->index,mediantemp->moved);
 		   		mediantemp = mediantemp->next;
 			}
 			i++;
