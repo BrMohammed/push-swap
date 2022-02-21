@@ -13,9 +13,6 @@ int main(int argc , char **argv)
 	t_list *tempa;
 	//t_list *mediantemp;
 	//t_list *tempb;
-	int g;
-	int t;
-	t_list *indextemp;
 
 	i = 1;
 	b = NULL;
@@ -47,38 +44,8 @@ int main(int argc , char **argv)
 			tempa = tempa->next;
 			i++;
 		}
-		g = i;
-		t = 0;
-		/////////////////////////////////////
-		while(g > 0)
-		{
-			tempa = a;
-			temp = a;
-			while(temp)
-			{
-				if(temp->index == -1)
-				{
-					indextemp = temp;
-					break;
-				}
-				temp = temp->next;
-			}
-			while(t < i)
-			{
-				if(tempa->content > indextemp->content && tempa->index == -1)
-				{
-					indextemp = tempa;
-				}
-				if(tempa)
-					tempa = tempa->next;
-				t++;
-			}
-			if(indextemp->content != -1)
-				indextemp->index = g;
-			t = 0;
-			g--;;
-		}
-		
+		insert_the_index(a,i);
+
 		// tempa = a;
 		// while(tempa)
 		// {
