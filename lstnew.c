@@ -9,6 +9,7 @@ t_list	*ft_lstnew(int content)
 		return (NULL);
 	index->content = content;
 	index->index = -1;
+	index->moved = -1;
 	index->next = NULL;
 	return (index);
 }

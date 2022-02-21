@@ -8,6 +8,7 @@ FILES = push_swap.c lstnew.c ft_strcmp.c ft_atoi.c operations.c operations2.c op
 
 RM = rm -f
 
+#bash tester.sh ../../push-swap ...  
 
 $(NAME):  $(FILES)
 	$(CC) $(CFLAGS)  -o $(NAME) $(FILES)

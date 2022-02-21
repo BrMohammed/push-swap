@@ -6,7 +6,7 @@ void sa(t_list **a) //sa revest the ferst and the seconde in 'a'
 
     var.temp = NULL;
 	var.temp = *a;
-	*a = (*a)->next;
+	*a = (*a)->next; 
 	var.temp->next = (*a)->next;
 	(*a)->next = var.temp;
 	var.temp = NULL;
