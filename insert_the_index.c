@@ -7,9 +7,9 @@ void insert_the_index(t_list *a,int i)
     int g;
     int t;
 
-    g = i;
+    g = i - 1;
 	t = 0;
-	while(g > 0)
+	while(g >= 0)
 	{
 		
 		tempa = a;
@@ -34,6 +34,6 @@ void insert_the_index(t_list *a,int i)
 		if(indextemp->content != -1)
 			indextemp->index = g;
 		t = 0;
-		g--;;
+		g--;
 	}
 }

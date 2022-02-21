@@ -12,7 +12,7 @@ int main(int argc , char **argv)
 	t_list *temp;
 	t_list *tempa;
 	t_list *mediantemp;
-	// t_list *tempb;
+	t_list *tempb;
 
 	i = 1;
 	b = NULL;
@@ -45,35 +45,79 @@ int main(int argc , char **argv)
 			i++;
 		}
 		insert_the_index(a,i);
-		int g = 1;
-		int t = 0;
+		//int g = 1;
+		int t = 1;
 		tempa = a;
-		while(tempa)
-		{
+		// while(tempa)
+		// {
 			while(t < i)
 			{
 				temp = a;
-				while(temp->index != g &&  temp->next != NULL)
+				while(temp->index != t &&  temp->next != NULL)
 				{
 					temp = temp->next;
 				}
-				while(temp->content != a->content)
+				if(temp->next == NULL && b)
 				{
-					pb(&a,&b);
+					temp = b;
+					while(temp->index != t &&  temp->next != NULL)
+					{
+						temp = temp->next;
+					}
 				}
-				if(temp->content == a->content)
+				if(b)
 				{
-					ra(&a);
+					tempb = b;
+					while(tempb->next != NULL)
+					{
+						if(temp->index == tempb->index)
+						{
+							temp->moved = 0;
+							break;
+						}
+						tempb =tempb->next;
+					}
+				}
+				if(temp->moved == -1)
+				{
+					if(a->next->index == temp->index)
+					{
+						sa(&a);
+					}
+					while(temp->index != a->index)
+					{
+						pb(&a,&b);
+					}
+					if(temp->index == a->index)
+					{
+						ra(&a);
+					}
+				}
+				else
+				{
+					if(b->next->content == temp->content)
+					{
+						sb(&b);
+					}
+					while(temp->index != b->index)
+					{
+						rrb(&b);
+					}
+					if(temp->index == b->index)
+					{
+						pa(&a,&b);
+						ra(&a);
+					}
 				}
 				t++;
 			}
-			t = 0;
-			g++;
-			tempa = tempa->next;
-		}
+		// 	t = 0;
+		// 	g++;
+		// 	tempa = tempa->next;
+		// }
 		
 		
-		///////////////////------showing------////////////////////
+		/////////////////------showing------////////////////////
 		i = 0;
 		tempa = a;
 		mediantemp = b;
@@ -81,11 +125,11 @@ int main(int argc , char **argv)
 		{
 			if (tempa == NULL)
 			{
-				printf(" -");
+				printf(" ** ");
 			}
 			else
 			{ 
-		   			printf("%d : %d\n" ,tempa->content,tempa->index);
+		   		printf("%d : %d -> %d " ,tempa->content,tempa->index,tempa->moved);
 		   		tempa = tempa->next;
 			}
 		 	if (mediantemp == NULL)
@@ -94,7 +138,7 @@ int main(int argc , char **argv)
 			}
 			else if( mediantemp->content )
 			{ 
-		   		printf("%d : %d\n" ,mediantemp->content,mediantemp->index);
+		   		printf("*** %d : %d -> %d\n" ,mediantemp->content,mediantemp->index,mediantemp->moved);
 		   		mediantemp = mediantemp->next;
 			}
 			i++;
