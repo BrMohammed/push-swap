@@ -11,9 +11,11 @@ int main(int argc , char **argv)
 	t_list *new;
 	t_list *temp;
 	t_list *tempa;
-	t_list *mediantemp;
+	//t_list *mediantemp;
 	//t_list *tempb;
-	int g = 0;
+	int g;
+	int t;
+	t_list *indextemp;
 
 	i = 1;
 	b = NULL;
@@ -45,10 +47,37 @@ int main(int argc , char **argv)
 			tempa = tempa->next;
 			i++;
 		}
-		
+		g = i;
+		t = 0;
 		/////////////////////////////////////
-
-
+		while(g > 0)
+		{
+			tempa = a;
+			temp = a;
+			while(temp)
+			{
+				if(temp->index == -1)
+				{
+					indextemp = temp;
+					break;
+				}
+				temp = temp->next;
+			}
+			while(t < i)
+			{
+				if(tempa->content > indextemp->content && tempa->index == -1)
+				{
+					indextemp = tempa;
+				}
+				if(tempa)
+					tempa = tempa->next;
+				t++;
+			}
+			if(indextemp->content != -1)
+				indextemp->index = g;
+			t = 0;
+			g--;;
+		}
 		
 		// tempa = a;
 		// while(tempa)
@@ -157,29 +186,37 @@ int main(int argc , char **argv)
 		// }
 		
 		///////////////////------showing------////////////////////
+		// i = 0;
+		// tempa = a;
+		// mediantemp = b;
+		// while (tempa || mediantemp)
+		// {
+		// 	if (tempa == NULL)
+		// 	{
+		// 		printf(" -");
+		// 	}
+		// 	else
+		// 	{ 
+		//    		printf("%d-" ,tempa->content);
+		//    		tempa = tempa->next;
+		// 	}
+		//  	if (mediantemp == NULL)
+		// 	{
+		// 		printf(" \n");
+		// 	}
+		// 	else if( mediantemp->content )
+		// 	{ 
+		//    		printf("%d\n" ,mediantemp->content);
+		//    		mediantemp = mediantemp->next;
+		// 	}
+		// 	i++;
+		// }
 		i = 0;
 		tempa = a;
-		mediantemp = b;
-		while (tempa || mediantemp)
+		while (tempa)
 		{
-			if (tempa == NULL)
-			{
-				printf(" -");
-			}
-			else
-			{ 
-		   		printf("%d-" ,tempa->content);
-		   		tempa = tempa->next;
-			}
-		 	if (mediantemp == NULL)
-			{
-				printf(" \n");
-			}
-			else if( mediantemp->content )
-			{ 
-		   		printf("%d\n" ,mediantemp->content);
-		   		mediantemp = mediantemp->next;
-			}
+		   	printf("%d : %d\n" ,tempa->content,tempa->index);
+		   	tempa = tempa->next;
 			i++;
 		}
 	}
