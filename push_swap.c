@@ -6,6 +6,7 @@ int main(int argc , char **argv)
 {
 	int i;
 	int moves;
+	int t;
 	t_list *a;
 	t_list *b;
 	t_list *new;
@@ -46,77 +47,69 @@ int main(int argc , char **argv)
 		}
 		insert_the_index(a,i);
 		//int g = 1;
-		int t = 1;
+		t = 0;
 		tempa = a;
-		// while(tempa)
-		// {
-			while(t < i)
+		while(t < i)
+		{
+			temp = a;
+			while(temp->index != t &&  temp->next != NULL)
 			{
-				temp = a;
+				temp = temp->next;
+			}
+			if(temp->next == NULL && b)
+			{
+				temp = b;
 				while(temp->index != t &&  temp->next != NULL)
 				{
 					temp = temp->next;
 				}
-				if(temp->next == NULL && b)
-				{
-					temp = b;
-					while(temp->index != t &&  temp->next != NULL)
-					{
-						temp = temp->next;
-					}
-				}
-				if(b)
-				{
-					tempb = b;
-					while(tempb->next != NULL)
-					{
-						if(temp->index == tempb->index)
-						{
-							temp->moved = 0;
-							break;
-						}
-						tempb =tempb->next;
-					}
-				}
-				if(temp->moved == -1)
-				{
-					if(a->next->index == temp->index)
-					{
-						sa(&a);
-					}
-					while(temp->index != a->index)
-					{
-						pb(&a,&b);
-					}
-					if(temp->index == a->index)
-					{
-						ra(&a);
-					}
-				}
-				else
-				{
-					if(b->next->content == temp->content)
-					{
-						sb(&b);
-					}
-					while(temp->index != b->index)
-					{
-						rrb(&b);
-					}
-					if(temp->index == b->index)
-					{
-						pa(&a,&b);
-						ra(&a);
-					}
-				}
-				t++;
 			}
-		// 	t = 0;
-		// 	g++;
-		// 	tempa = tempa->next;
-		// }
-		
-		
+			if(b)
+			{
+				tempb = b;
+				while(tempb->next != NULL)
+				{
+					if(temp->index == tempb->index)
+					{
+						temp->moved = 0;
+						break;
+					}
+					tempb =tempb->next;
+				}
+			}
+			if(temp->moved == -1)
+			{
+				// if(a->next->index == temp->index)
+				// {
+				// 	sa(&a);
+				// }
+				while(temp->index != a->index)
+				{
+					pb(&a,&b);
+				}
+				if(temp->index == a->index)
+				{
+					ra(&a);
+				}
+			}
+			else
+			{
+				// if(b->next->content == temp->content)
+				// {
+				// 	sb(&b);
+				// }
+				while(temp->index != b->index)
+				{
+					rrb(&b);
+				}
+				if(temp->index == b->index)
+				{
+					pa(&a,&b);
+					ra(&a);
+				}
+			}
+			t++;
+		}
 		/////////////////------showing------////////////////////
 		i = 0;
 		tempa = a;
