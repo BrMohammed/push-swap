@@ -78,29 +78,25 @@ int main(int argc , char **argv)
 			}
 			if(temp->moved == -1)
 			{
-				// if(a->next->index == temp->index)
-				// {
-				// 	sa(&a);
-				// }
-				while(temp->index != a->index)
+				if(temp->next != NULL)
 				{
-					pb(&a,&b);
-					write(1,"pb\n",3);
-					moves++;
+					while(temp->index != a->index)
+					{
+						pb(&a,&b);
+						write(1,"pb\n",3);
+						moves++;
+					}
+					if(temp->index == a->index)
+					{
+						ra(&a);
+						write(1,"ra\n",3);
+						moves++;
+					}
 				}
-				if(temp->index == a->index)
-				{
-					ra(&a);
-					write(1,"ra\n",3);
-					moves++;
-				}
+				
 			}
 			else
 			{
-				// if(b->next->content == temp->content)
-				// {
-				// 	sb(&b);
-				// }
 				while(temp->index != b->index)
 				{
 					rrb(&b);
@@ -116,6 +112,7 @@ int main(int argc , char **argv)
 					write(1,"ra\n",3);
 					moves++;
 				}
+				
 			}
 			t++;
 		}
