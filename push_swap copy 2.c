@@ -48,7 +48,102 @@ int main(int argc , char **argv)
 			i++;
 		}
 		insert_the_index(a,i);
-		
+		//int g = 1;
+		t = 0;
+		while(t < i)
+		{
+			temp = a;
+			while(temp->index != t &&  temp->next != NULL)
+			{
+				temp = temp->next;
+			}
+			if(temp->next == NULL && b)
+			{
+				temp = b;
+				while(temp->index != t &&  temp->next != NULL)
+				{
+					temp = temp->next;
+				}
+			}
+			if(b)
+			{
+				tempb = b;
+				while(tempb)
+				{
+					if(temp->index == tempb->index)
+					{
+						temp->moved = 0;
+						break;
+					}
+					tempb =tempb->next;
+				}
+			}
+			if(temp->moved == -1)
+			{
+				if(temp->next != NULL)
+				{
+					while(temp->index != a->index)
+					{	
+						pb(&a,&b);
+						write(1,"pb\n",3);
+						moves++;
+					}
+					if(temp->index == a->index)
+					{
+						ra(&a);
+						write(1,"ra\n",3);
+						moves++;
+					}
+				}
+			}
+			else
+			{
+				mediantemp = b;
+				g =0;
+				while(mediantemp)
+				{
+					mediantemp = mediantemp->next;
+					g++;
+				}
+				mediantemp = b;
+				x = 0;
+				while(mediantemp)
+				{
+					if(temp->index == mediantemp->index)
+						break;
+					mediantemp = mediantemp->next;
+					x++;
+				}
+				if(x > g/2)
+				{
+					while(temp->index != b->index)
+					{
+						rrb(&b);
+						write(1,"rrb\n",4);
+						moves++;
+					}
+				}
+				else
+				{
+					while(temp->index != b->index)
+					{
+						rb(&b);
+						write(1,"rb\n",3);
+						moves++;
+					}
+				}
+				if(temp->index == b->index)
+				{
+					pa(&a,&b);
+					write(1,"pa\n",3);
+					moves++;
+					ra(&a);
+					write(1,"ra\n",3);
+					moves++;
+				}
+			}
+			t++;
+		}
 		/////////////////------showing------////////////////////
 		i = 0;
 		tempa = a;
