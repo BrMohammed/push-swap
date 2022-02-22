@@ -7,6 +7,8 @@ int main(int argc , char **argv)
 	int i;
 	int moves;
 	int t;
+	int g;
+	int x;
 	t_list *a;
 	t_list *b;
 	t_list *new;
@@ -81,7 +83,7 @@ int main(int argc , char **argv)
 				if(temp->next != NULL)
 				{
 					while(temp->index != a->index)
-					{
+					{	
 						pb(&a,&b);
 						write(1,"pb\n",3);
 						moves++;
@@ -93,15 +95,42 @@ int main(int argc , char **argv)
 						moves++;
 					}
 				}
-				
 			}
 			else
 			{
-				while(temp->index != b->index)
+				mediantemp = b;
+				g =0;
+				while(mediantemp)
 				{
-					rrb(&b);
-					write(1,"rrb\n",4);
-					moves++;
+					mediantemp = mediantemp->next;
+					g++;
+				}
+				mediantemp = b;
+				x = 0;
+				while(mediantemp)
+				{
+					if(temp->index == mediantemp->index)
+						break;
+					mediantemp = mediantemp->next;
+					x++;
+				}
+				if(x > g/2)
+				{
+					while(temp->index != b->index)
+					{
+						rrb(&b);
+						write(1,"rrb\n",4);
+						moves++;
+					}
+				}
+				else
+				{
+					while(temp->index != b->index)
+					{
+						rb(&b);
+						write(1,"rb\n",3);
+						moves++;
+					}
 				}
 				if(temp->index == b->index)
 				{
@@ -112,7 +141,6 @@ int main(int argc , char **argv)
 					write(1,"ra\n",3);
 					moves++;
 				}
-				
 			}
 			t++;
 		}
