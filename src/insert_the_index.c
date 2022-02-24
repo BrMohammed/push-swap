@@ -1,4 +1,4 @@
-# include "push_swap.h"
+# include "../push_swap.h"
 
 void insert_the_index(t_list *a,int i)
 {
@@ -7,9 +7,9 @@ void insert_the_index(t_list *a,int i)
     int g;
     int t;
 
-    g = i - 1;
+    g = i;
 	t = 0;
-	while(g >= 0)
+	while(g > 0)
 	{
 		
 		tempa = a;

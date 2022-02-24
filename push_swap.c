@@ -6,21 +6,23 @@ int main(int argc , char **argv)
 {
 	int i;
 	int moves;
-	int t;
 	int g;
 	int x;
+	int t;
+	int y;
 	t_list *a;
 	t_list *b;
 	t_list *new;
 	t_list *temp;
 	t_list *tempa;
 	t_list *mediantemp;
-	t_list *tempb;
+	//t_list *tempb;
 
 	i = 1;
 	b = NULL;
 	temp = NULL;
 	moves = 0;
+
 	if (argc > 2)
 	{
 		while (argv[i])
@@ -48,6 +50,69 @@ int main(int argc , char **argv)
 			i++;
 		}
 		insert_the_index(a,i);
+		tempa = a;
+		g = 0;
+		y = i/4 ;
+		while(g < i)
+		{
+			while(g < y)
+			{
+				temp = a;
+				while(temp->index > y && temp)
+				{
+					temp = temp->next;
+				}
+				if(temp)
+				{
+					mediantemp = a;
+					t = 0;
+					while(mediantemp->next != NULL)
+					{
+						mediantemp = mediantemp->next;
+						t++;
+					}
+					mediantemp = a;
+					x = 0;
+					while(mediantemp->next != NULL)
+					{
+						if(temp->index == mediantemp->index)
+							break;
+						mediantemp = mediantemp->next;
+						x++;
+					}
+					if(x > t/2)
+					{
+						while(temp->index != a->index)
+						{
+							rra(&a);
+							write(1,"rra\n",4);
+							moves++;
+						}
+					}
+					else
+					{
+						while(temp->index != a->index)
+						{
+							ra(&a);
+							write(1,"ra\n",3);
+							moves++;
+						}
+					}
+					if(temp->index == a->index)
+					{
+						pb(&a,&b);
+						write(1,"pb\n",3);
+						moves++;
+					}
+				}
+				g++;
+			}
+			g = y;
+			y = y + i/4;
+		}
+
+
+
 		
 		/////////////////------showing------////////////////////
 		i = 0;

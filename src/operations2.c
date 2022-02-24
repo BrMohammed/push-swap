@@ -1,4 +1,4 @@
-# include "push_swap.h"
+# include "../push_swap.h"
 
 void rb(t_list **b) //rb send the first one in 'b' to the last
 {

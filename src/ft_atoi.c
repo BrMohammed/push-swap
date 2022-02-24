@@ -1,4 +1,4 @@
-# include "push_swap.h"
+# include "../push_swap.h"
 
 static long	loop(const char *str, int i, int n)
 {
