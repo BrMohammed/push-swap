@@ -110,6 +110,68 @@ int main(int argc , char **argv)
 			}
 			g = y;
 			y = y + i/4;
+			if(g == i)
+			{
+				while(g > 0)
+				{
+					mediantemp = b;
+					tempb = b;
+					while(tempb->index != g && tempb)
+					{
+						tempb = tempb->next;
+					}
+					t = 0;
+					while(mediantemp)
+					{
+						mediantemp = mediantemp->next;
+						t++;
+					}
+					mediantemp = b;
+					x = 0;
+					while(mediantemp)
+					{
+						if(temp->index == mediantemp->index)
+							break;
+						mediantemp = mediantemp->next;
+						x++;
+					}
+					if(x > t/2)
+					{
+						while(tempb->index != b->index)
+						{
+							rrb(&b);
+							write(1,"rrb\n",4);
+							moves++;
+						}
+					}
+					else
+					{
+						if(tempb->index == b->next->index)
+						{
+							sb(&b);
+							write(1,"sb\n",3);
+							moves++;
+						}
+						else
+						{
+							while(tempb->index != b->index)
+							{
+								rb(&b);
+								write(1,"rb\n",3);
+								moves++;
+							}
+						}
+					}
+					if(tempb->index == b->index)
+					{
+						pa(&a,&b);
+						write(1,"pa\n",3);
+						moves++;
+					}
+					g--;
+				}
+				g = i;
+			}
 		}
 		
 
