@@ -10,7 +10,6 @@ int main(int argc , char **argv)
 	int x;
 	int t;
 	int y;
-	int z;
 	t_list *a;
 	t_list *b;
 	t_list *new;
@@ -54,8 +53,7 @@ int main(int argc , char **argv)
 		tempa = a;
 		tempb = b;
 		g = 0;
-		z = 0;
-		y = i/10;
+		y = i/20;
 		while(g < i)
 		{
 			while(g < y)
@@ -101,6 +99,7 @@ int main(int argc , char **argv)
 							moves++;
 						}
 					}
+
 					if(temp->index == a->index)
 					{
 						pb(&a,&b);
@@ -110,126 +109,121 @@ int main(int argc , char **argv)
 				}
 				g++;
 			}
+			tempa = ft_lstlast(b);
+			temp = b;
+			//tempb = b;
+			while(temp)
+			{
+				temp = ft_lstlast(b);
+				mediantemp = b;
+				while(mediantemp->content > mediantemp->next->content )
+				{
+					mediantemp = mediantemp->next;
+					if(mediantemp->next == NULL)
+						break;
+				}
+				if(b->content < b->next->content)
+				{
+					sb(&b);
+					write(1,"sb\n",3);
+					moves++;
+				}
+				if(mediantemp->content < tempa->content)
+				{
+					rrb(&b);
+					write(1,"rrb\n",4);
+					moves++;
+					temp = b;
+				}
+				tempa = ft_lstlast(b);
+				if(b->content < tempa->content && b->content < mediantemp->content)
+				{
+					rb(&b);
+					write(1,"rb\n",3);
+					moves++;
+					temp = b;
+				}
+				if(mediantemp->next != NULL)
+				{
+					if(mediantemp->content < mediantemp->next->content)
+					{
+						pa(&a,&b);
+						write(1,"pa\n",3);
+						moves++;
+						temp = b;
+					}
+				}
+				x = 0;
+				tempb = b;
+				while(tempb)
+				{
+					tempb = tempb->next;
+					x++;
+				}
+				if(temp->next == NULL && b && x < y)
+				{
+					pb(&a,&b);
+					write(1,"pb\n",3);
+					moves++;
+					temp = b;
+				}
+				//tempb = b;
+				temp = temp->next;
+			}
 			g = y;
 			y = y + i/10;
 		}
-	// 	tempa = ft_lstlast(a);
-	// 	temp = a;
-	// 	tempb = a;
-	// //	x = 0;
-	// 	while(temp)
-	// 	{
-	// 			temp = ft_lstlast(a);
-	// 			mediantemp = a;
-	// 			while(mediantemp->content < mediantemp->next->content )
-	// 			{
-	// 				mediantemp = mediantemp->next;
-	// 				if(mediantemp->next == NULL)
-	// 					break;
-	// 			}
-	// 			//printf("pivot..%d\n" ,mediantemp->content);
-	// 			if(a->content > a->next->content)
-	// 			{
-	// 				sa(&a);
-	// 				write(1,"sa\n",3);
-	// 				moves++;
-	// 			}
-	// 			tempa = ft_lstlast(a);
-	// 			if(mediantemp->content > tempa->content)
-	// 			{
-	// 				rra(&a);
-	// 				write(1,"rra\n",4);
-	// 				moves++;
-	// 				temp = a;
-	// 			}
-	// 			tempa = ft_lstlast(a);
-	// 			if(a->content > tempa->content && a->content > mediantemp->content)
-	// 			{
-	// 				ra(&a);
-	// 				write(1,"ra\n",3);
-	// 				moves++;
-	// 				temp = a;
-	// 			}
-	// 			if(mediantemp->next != NULL)
-	// 			{
-	// 				if(mediantemp->content > mediantemp->next->content )
-	// 				{
-	// 					pb(&a,&b);
-	// 					write(1,"pb\n",3);
-	// 					moves++;
-	// 					temp = a;
-	// 				}
-	// 			}
-	// 			x = 0;
-	// 			while(tempb)
-	// 			{
-	// 				tempb= tempb->next;
-	// 				x++;
-	// 			}
-	// 			if(temp->next == NULL && b && x < i/4)
-	// 			{
-	// 				pa(&a,&b);
-	// 				write(1,"pa\n",3);
-	// 				moves++;
-	// 				temp = a;
-	// 			}
-	// 			tempb = a;
-	// 			temp = temp->next;
-	// 	}
-		t = i;
-		while(t > 0)
-		{
-				temp = b;
-				while(temp->index != t &&  temp->next != NULL)
-				{
-					temp = temp->next;
-				}
-				mediantemp = b;
-				g = 0;
-				while(mediantemp)
-				{
-					mediantemp = mediantemp->next;
-					g++;
-				}
-				mediantemp = b;
-				x = 0;
-				while(mediantemp)
-				{
-					if(temp->index == mediantemp->index)
-						break;
-					mediantemp = mediantemp->next;
-					x++;
-				}
-				if(x > g/2)
-				{
-					while(temp->index != b->index)
-					{
-						rrb(&b);
-						write(1,"rrb\n",4);
-						moves++;
-					}
-				}
-				else
-				{
-					while(temp->index != b->index)
-					{
-						rb(&b);
-						write(1,"rb\n",3);
-						moves++;
-					}
-				}
-				if(temp->index == b->index)
-				{
-					pa(&a,&b);
-					write(1,"pa\n",3);
-					moves++;
-				}
-		
-			t--;
-		}
-
-
-
+	
+		// t = i;
+		// while(t > 0)
+		// {
+		// 	temp = b;
+		// 	while(temp->index != t &&  temp->next != NULL)
+		// 	{
+		// 		temp = temp->next;
+		// 	}
+		// 	mediantemp = b;
+		// 	g = 0;
+		// 	while(mediantemp)
+		// 	{
+		// 		mediantemp = mediantemp->next;
+		// 		g++;
+		// 	}
+		// 	mediantemp = b;
+		// 	x = 0;
+		// 	while(mediantemp)
+		// 	{
+		// 		if(temp->index == mediantemp->index)
+		// 			break;
+		// 		mediantemp = mediantemp->next;
+		// 		x++;
+		// 	}
+		// 	if(x > g/2)
+		// 	{
+		// 		while(temp->index != b->index)
+		// 		{
+		// 			rrb(&b);
+		// 			write(1,"rrb\n",4);
+		// 			moves++;
+		// 		}
+		// 	}
+		// 	else
+		// 	{
+		// 		while(temp->index != b->index)
+		// 		{
+		// 			rb(&b);
+		// 			write(1,"rb\n",3);
+		// 			moves++;
+		// 		}
+		// 	}
+		// 	if(temp->index == b->index)
+		// 	{
+		// 		pa(&a,&b);
+		// 		write(1,"pa\n",3);
+		// 		moves++;
+		// 	}
+		// 	t--;
+		// }
 		
 		/////////////////------showing------////////////////////
 		i = 0;

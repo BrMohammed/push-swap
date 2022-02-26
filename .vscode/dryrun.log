@@ -1,5 +1,5 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/brmohamm/Desktop/push-swap'
-gcc -Wall -Wextra -Werror  -o push_swap push_swap.c  src/lstnew.c src/ft_strcmp.c src/ft_atoi.c src/operations.c src/operations2.c src/operations3.c src/insert_the_index.c
+make: `push_swap' is up to date.
 make: Leaving directory `/Users/brmohamm/Desktop/push-swap'
  
