@@ -55,44 +55,37 @@ int main(int argc , char **argv)
 		y = i/5;
 		while(g < i)
 		{
+			
 			while(g < y)
 			{
 				temp = a;
-				mediantemp = a;
-				t = 0;
-				int v = 0;
-				x = 0;
-				while(mediantemp->next)
-				{
-					mediantemp = mediantemp->next;
-					t++;
-				}
-				while(mediantemp->index > y && mediantemp->prev)
-				{
-					mediantemp = mediantemp->prev;
-					x++;
-				}
-				while(temp->index > y && temp->next)
-				{
-					temp = temp->next;
-					v++;
-				}
-				if(x < v)
-				{
-					temp = mediantemp;
-				}
+				
 				if(temp)
-				{
+				{	
+					int v = 0;
+					t = 0;
 					mediantemp = a;
-					x = 0;
 					while(mediantemp->next)
 					{
-						if(temp->index == mediantemp->index)
-							break;
 						mediantemp = mediantemp->next;
-						x++;
+						t++;
 					}
-					if(x > t/2)
+					x = t;
+					while(mediantemp->index > y && mediantemp->prev)
+					{
+						mediantemp = mediantemp->prev;
+						x--;
+					}
+					while(temp->index > y && temp->next)
+					{
+						temp = temp->next;
+						v++;
+					}
+					if(mediantemp->index < y && x > t/2 && x > v )
+					{
+						temp = mediantemp;
+					}
+					if(mediantemp->index < y && x > t/2 && x > v)
 					{
 						while(temp->index != a->index)
 						{
@@ -119,59 +112,59 @@ int main(int argc , char **argv)
 				}
 				g++;
 			}
-			g = y;
 			y = y + i/5;
 		}
-		// t = i;
-		// while(t > 0)
-		// {
-		// 	temp = b;
-		// 	while(temp->index != t &&  temp->next != NULL)
-		// 	{
-		// 		temp = temp->next;
-		// 	}
-		// 	mediantemp = b;
-		// 	g = 0;
-		// 	while(mediantemp)
-		// 	{
-		// 		mediantemp = mediantemp->next;
-		// 		g++;
-		// 	}
-		// 	mediantemp = b;
-		// 	x = 0;
-		// 	while(mediantemp)
-		// 	{
-		// 		if(temp->index == mediantemp->index)
-		// 			break;
-		// 		mediantemp = mediantemp->next;
-		// 		x++;
-		// 	}
-		// 	if(x > g/2)
-		// 	{
-		// 		while(temp->index != b->index)
-		// 		{
-		// 			rrb(&b);
-		// 			write(1,"rrb\n",4);
-		// 			moves++;
-		// 		}
-		// 	}
-		// 	else
-		// 	{
-		// 		while(temp->index != b->index)
-		// 		{
-		// 			rb(&b);
-		// 			write(1,"rb\n",3);
-		// 			moves++;
-		// 		}
-		// 	}
-		// 	if(temp->index == b->index)
-		// 	{
-		// 		pa(&a,&b);
-		// 		write(1,"pa\n",3);
-		// 		moves++;
-		// 	}
-		// 	t--;
-		// }
+		t = i;
+		while(t > 0)
+		{
+			temp = b;
+			while(temp->index != t &&  temp->next != NULL)
+			{
+				temp = temp->next;
+			}
+			mediantemp = b;
+			g = 0;
+			while(mediantemp)
+			{
+				mediantemp = mediantemp->next;
+				g++;
+			}
+			mediantemp = b;
+			x = 0;
+			while(mediantemp)
+			{
+				if(temp->index == mediantemp->index)
+					break;
+				mediantemp = mediantemp->next;
+				x++;
+			}
+			if(x > g/2)
+			{
+				while(temp->index != b->index)
+				{
+					printf("b: %d\n", b->next->index);
+					rrb(&b);
+					write(1,"rrb\n",4);
+					moves++;
+				}
+			}
+			else
+			{
+				while(temp->index != b->index)
+				{
+					rb(&b);
+					write(1,"rb\n",3);
+					moves++;
+				}
+			}
+			if(temp->index == b->index)
+			{
+				pa(&a,&b);
+				write(1,"pa\n",3);
+				moves++;
+			}
+			t--;
+		}
 		
 		///////////////------showing------////////////////////
 		i = 0;
