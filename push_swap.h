@@ -12,6 +12,7 @@ typedef struct s_list
 	int			content;
 	int			index;
 	int			moved;
+	struct s_list	*prev;
 	struct s_list	*next;
 }	t_list;
 

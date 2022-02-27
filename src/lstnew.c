@@ -11,6 +11,7 @@ t_list	*ft_lstnew(int content)
 	index->index = -1;
 	index->moved = -1;
 	index->next = NULL;
+	index->prev = NULL;
 	return (index);
 }
 
@@ -44,8 +45,11 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	if (*lst)
 	{	
+		
 		temp = ft_lstlast(*lst);
+		new->prev = temp;
 		temp->next = new;
+		
 	}
 	else
 		*lst = new;
