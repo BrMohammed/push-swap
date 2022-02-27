@@ -8,7 +8,9 @@ void sa(t_list **a) //sa revest the ferst and the seconde in 'a'
 	var.temp = *a;
 	*a = (*a)->next; 
 	var.temp->next = (*a)->next;
+	var.temp->prev = (*a);
 	(*a)->next = var.temp;
+	(*a)->prev = NULL;
 	var.temp = NULL;
 }
 
@@ -20,7 +22,9 @@ void sb(t_list **b) //sb revest the ferst and the seconde in 'b'
 	var.temp = *b;
 	*b = (*b)->next;
 	var.temp->next = (*b)->next;
+	var.temp->prev = (*b);
 	(*b)->next = var.temp;
+	(*b)->prev = NULL;
 	var.temp = NULL;
 }
 
