@@ -45,31 +45,43 @@ int main(int argc , char **argv)
 		tempa = a;
 		i = 0;
 		/////////calcule the length ////////
+		int f = 0;
 		while(tempa)
 		{
 			tempa = tempa->next;
-			i++;
+			f++;
 		}
-		if(i <= 100)
-			z = i/4;
-		else
-			z = i/12;
-		insert_the_index(a,i);
+		// if(f <= 100)
+		// 	z = f/3;
+		// else
+		// 	z = f/11.2;
+		insert_the_index(a,f);
 		tempa = a;
 		tempb = b;
 		g = 0;
 		y = z;
-		while(g < i)
+		while(g < f)
 		{
+			tempa = a;
+			if(a)
+			{
+				i = 0;
+				while(tempa)
+				{
+					tempa = tempa->next;
+					i++;
+				}
+			}
+			if(f <= 100)
+			z = i/3;
+			else
+			z = i/7.2;
 			while(g < y)
 			{
+				
 				temp = a;
 				if(temp)
 				{	
-					// while(temp->index > y && temp->next)
-					// {
-					// 	temp = temp->next;
-					// }
 					// t = 0;
 					// mediantemp = a;
 					// while(mediantemp->next)
@@ -77,65 +89,49 @@ int main(int argc , char **argv)
 					// 	mediantemp = mediantemp->next;
 					// 	t++;
 					// }
-					// mediantemp = a;
-					// x = 0;
-					// while(mediantemp->next)
+					// x = t;
+					// while(mediantemp->index > y && mediantemp->prev)
 					// {
-					// 	if(temp->index == mediantemp->index)
-					// 		break;
-					// 	mediantemp = mediantemp->next;
-					// 	x++;
+					// 	mediantemp = mediantemp->prev;
+					// 	x--;
 					// }
-					t = 0;
-					mediantemp = a;
-					while(mediantemp->next)
-					{
-						mediantemp = mediantemp->next;
-						t++;
-					}
-					x = t;
-					while(mediantemp->index > y && mediantemp->prev)
-					{
-						mediantemp = mediantemp->prev;
-						x--;
-					}
 					int v = 0;
 					while(temp->index > y && temp->next)
 					{
 						temp = temp->next;
 						v++;
 					}
-					if(t-x < v && temp->index < mediantemp->index)
-					{
-						temp = mediantemp;
-					}
-					mediantemp = a;
-					x = 0;
-					while(mediantemp)
-					{
-						if(temp->index == mediantemp->index)
-							break;
-						mediantemp = mediantemp->next;
-						x++;
-					}
-					if(x > t/2)
-					{
-						while(temp->index != a->index)
-						{
-							rra(&a);
-							write(1,"rra\n",4);
-							moves++;
-						}
-					}
-					else
-					{
+					// if(t-x < v && temp->index < mediantemp->index)
+					// {
+					// 	temp = mediantemp;
+					// }
+					// mediantemp = a;
+					// x = 0;
+					// while(mediantemp)
+					// {
+					// 	if(temp->index == mediantemp->index)
+					// 		break;
+					// 	mediantemp = mediantemp->next;
+					// 	x++;
+					// }
+					// if(x > t/2)
+					// {
+					// 	while(temp->index != a->index)
+					// 	{
+					// 		rra(&a);
+					// 		write(1,"rra\n",4);
+					// 		moves++;
+					// 	}
+					// }
+					// else
+					// {
 						while(temp->index != a->index)
 						{
 							ra(&a);
 							write(1,"ra\n",3);
 							moves++;
 						}
-					}
+					// }
 					if(temp->index == a->index)
 					{
 						pb(&a,&b);
@@ -145,10 +141,9 @@ int main(int argc , char **argv)
 				}
 				g++;
 			}
-			g = y;
-			y = y + z;
+			y = y + z + 1;
 		}
-		t = i;
+		t = f;
 		while(t > 0)
 		{
 			temp = b;
