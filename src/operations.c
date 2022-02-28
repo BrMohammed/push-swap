@@ -28,19 +28,24 @@ void sb(t_list **b) //sb revest the ferst and the seconde in 'b'
 	var.temp = NULL;
 }
 
-void pb(t_list **a, t_list **b) //pb send the first one in 'a' to the last in 'b'
+void pb(t_list **a, t_list **b) //pb send the first one in 'a' to the first in 'b'
 {
     t_variabl var;
 
     var.temp = NULL;
 	var.temp = *a;
+	
+	if(*b)
+		(*b)->prev = *a;
 	(*a) = (*a)->next;
+	if(*a)
+		(*a)->prev = NULL;
 	var.temp->next = *b;
 	*b = var.temp;
 	var.temp = NULL;
 }
 
-void pa(t_list **a, t_list **b) //pa send the first one in 'b' to the last in 'a'
+void pa(t_list **a, t_list **b) //pa send the first one in 'b' to the first in 'a'
 {
     t_variabl var;
 
@@ -57,9 +62,11 @@ void ra(t_list **a) //ra send the first one in 'a' to the last
     t_variabl var;
 
     var.temp = NULL;
-	var.temp =ft_lstlast(*a);
+	var.temp = ft_lstlast(*a);
+	(*a)->prev = var.temp;
 	var.temp->next = *a;
 	*a = (*a)->next;
+	(*a)->prev = NULL;
 	var.temp->next->next = NULL;
 	var.temp = NULL; 
 }

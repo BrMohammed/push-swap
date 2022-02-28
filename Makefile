@@ -10,10 +10,10 @@ RM = rm -f
 
 #bash tester.sh ../../push-swap ...  
 
+all : $(NAME)
+
 $(NAME):  $(FILES)
 	$(CC) $(CFLAGS)  -o $(NAME) $(FILES) $(SRC_FILES)
-	
-all : $(NAME)
 
 clean :
 	@$(RM) $(NAME)
