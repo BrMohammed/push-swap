@@ -59,7 +59,7 @@ int main(int argc , char **argv)
 		tempa = a;
 		tempb = b;
 		g = 0;
-		y = z;
+		y = 0;
 		while(g < f)
 		{
 			tempa = a;
@@ -73,65 +73,29 @@ int main(int argc , char **argv)
 				}
 			}
 			if(f <= 100)
-			z = i/3;
+				z = i/3.3;
 			else
-			z = i/7.2;
+				z = i/7.8;
+			y = y + z + 1;
 			while(g < y)
 			{
 				
 				temp = a;
 				if(temp)
 				{	
-					// t = 0;
-					// mediantemp = a;
-					// while(mediantemp->next)
-					// {
-					// 	mediantemp = mediantemp->next;
-					// 	t++;
-					// }
-					// x = t;
-					// while(mediantemp->index > y && mediantemp->prev)
-					// {
-					// 	mediantemp = mediantemp->prev;
-					// 	x--;
-					// }
+					
 					int v = 0;
 					while(temp->index > y && temp->next)
 					{
 						temp = temp->next;
 						v++;
 					}
-					// if(t-x < v && temp->index < mediantemp->index)
-					// {
-					// 	temp = mediantemp;
-					// }
-					// mediantemp = a;
-					// x = 0;
-					// while(mediantemp)
-					// {
-					// 	if(temp->index == mediantemp->index)
-					// 		break;
-					// 	mediantemp = mediantemp->next;
-					// 	x++;
-					// }
-					// if(x > t/2)
-					// {
-					// 	while(temp->index != a->index)
-					// 	{
-					// 		rra(&a);
-					// 		write(1,"rra\n",4);
-					// 		moves++;
-					// 	}
-					// }
-					// else
-					// {
-						while(temp->index != a->index)
-						{
-							ra(&a);
-							write(1,"ra\n",3);
-							moves++;
-						}
-					// }
+					while(temp->index != a->index)
+					{
+						ra(&a);
+						write(1,"ra\n",3);
+						moves++;
+					}
 					if(temp->index == a->index)
 					{
 						pb(&a,&b);
@@ -141,7 +105,6 @@ int main(int argc , char **argv)
 				}
 				g++;
 			}
-			y = y + z + 1;
 		}
 		t = f;
 		while(t > 0)
