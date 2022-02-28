@@ -51,7 +51,7 @@ int main(int argc , char **argv)
 			i++;
 		}
 		if(i <= 100)
-			z = i/6;
+			z = i/4;
 		else
 			z = i/12;
 		insert_the_index(a,i);
@@ -66,10 +66,26 @@ int main(int argc , char **argv)
 				temp = a;
 				if(temp)
 				{	
-					while(temp->index > y && temp->next)
-					{
-						temp = temp->next;
-					}
+					// while(temp->index > y && temp->next)
+					// {
+					// 	temp = temp->next;
+					// }
+					// t = 0;
+					// mediantemp = a;
+					// while(mediantemp->next)
+					// {
+					// 	mediantemp = mediantemp->next;
+					// 	t++;
+					// }
+					// mediantemp = a;
+					// x = 0;
+					// while(mediantemp->next)
+					// {
+					// 	if(temp->index == mediantemp->index)
+					// 		break;
+					// 	mediantemp = mediantemp->next;
+					// 	x++;
+					// }
 					t = 0;
 					mediantemp = a;
 					while(mediantemp->next)
@@ -77,9 +93,25 @@ int main(int argc , char **argv)
 						mediantemp = mediantemp->next;
 						t++;
 					}
+					x = t;
+					while(mediantemp->index > y && mediantemp->prev)
+					{
+						mediantemp = mediantemp->prev;
+						x--;
+					}
+					int v = 0;
+					while(temp->index > y && temp->next)
+					{
+						temp = temp->next;
+						v++;
+					}
+					if(t-x < v && temp->index < mediantemp->index)
+					{
+						temp = mediantemp;
+					}
 					mediantemp = a;
 					x = 0;
-					while(mediantemp->next)
+					while(mediantemp)
 					{
 						if(temp->index == mediantemp->index)
 							break;
@@ -144,7 +176,6 @@ int main(int argc , char **argv)
 			{
 				while(temp->index != b->index)
 				{
-					printf("b: %d\n", b->next->index);
 					rrb(&b);
 					write(1,"rrb\n",4);
 					moves++;
