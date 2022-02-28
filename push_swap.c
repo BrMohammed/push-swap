@@ -8,6 +8,7 @@ int main(int argc , char **argv)
 	int x;
 	int t;
 	int y;
+	int z;
 	t_list *a;
 	t_list *b;
 	t_list *new;
@@ -20,6 +21,7 @@ int main(int argc , char **argv)
 	i = 1;
 	b = NULL;
 	temp = NULL;
+	z = 0;
 	moves = 0;
 
 	if (argc > 2)
@@ -48,20 +50,26 @@ int main(int argc , char **argv)
 			tempa = tempa->next;
 			i++;
 		}
+		if(i <= 100)
+			z = i/6;
+		else
+			z = i/12;
 		insert_the_index(a,i);
-		
 		tempa = a;
 		tempb = b;
 		g = 0;
-		y = i/10;
+		y = z;
 		while(g < i)
 		{
-			
 			while(g < y)
 			{
 				temp = a;
 				if(temp)
 				{	
+					while(temp->index > y && temp->next)
+					{
+						temp = temp->next;
+					}
 					t = 0;
 					mediantemp = a;
 					while(mediantemp->next)
@@ -69,20 +77,6 @@ int main(int argc , char **argv)
 						mediantemp = mediantemp->next;
 						t++;
 					}
-					x = t;
-					while(mediantemp->index > y && mediantemp->prev)
-					{
-						mediantemp = mediantemp->prev;
-						x--;
-					}
-					while(temp->index > y && temp->next)
-					{
-						temp = temp->next;
-					}
-					// if(x > t/2 && temp->index > mediantemp->index)
-					// {
-					// 	temp = mediantemp;
-					// }
 					mediantemp = a;
 					x = 0;
 					while(mediantemp->next)
@@ -117,14 +111,10 @@ int main(int argc , char **argv)
 						moves++;
 					}
 				}
-				if(b->next && b->index < b->next->index)
-				{
-					sb(&b);
-				}
 				g++;
 			}
 			g = y;
-			y = y + i/10;
+			y = y + z;
 		}
 		t = i;
 		while(t > 0)
