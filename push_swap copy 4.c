@@ -64,20 +64,18 @@ int main(int argc , char **argv)
 		tempb = b;
 		g = 0;
 		y = z;
-		int nn = z + 1;
+		int nn = z;
 		int bb = z;
-		int cc =z;
+		int gg = 0;
 		while(a)
 		{
 			while(g < y)
 			{
-				
 				if(a)
 				{
-					
 					while(a->index > y)
 					{
-						if(a->index > f - (nn + bb + cc) && a->index <= f - (bb + cc))
+						if(a->index > f - (nn + bb) && a->index <= f - bb)
 						{
 							pb(&a,&b);
 							write(1,"pb\n",3);
@@ -88,24 +86,21 @@ int main(int argc , char **argv)
 						}
 						else
 						{
-						
 							ra(&a);
 							write(1,"ra\n",3);
 							moves++;
 						}
+						
 					}
 					pb(&a,&b);
 					write(1,"pb\n",3);
 					moves++;
 				}
 				g++;
-				if (g == nn)
+				gg++;
+				if (gg == nn)
 				{
 					bb = 0;
-				}
-				if(g == nn * 2 + 1)
-				{
-					cc = 0;
 				}
 			}
 			y = y + z;
@@ -163,32 +158,32 @@ int main(int argc , char **argv)
 		
 
 		///////////////------showing------////////////////////
-		// i = 0;
-		// tempa = a;
-		// mediantemp = b;
-		// printf("---------------------------------\nA\t\t\tB\n\n");
-		// while (tempa || mediantemp)
-		// {
-		// 	if (tempa == NULL)
-		// 	{
-		// 		printf(" ** ");
-		// 	}
-		// 	else
-		// 	{ 
-		//    		printf("%d : %d" ,tempa->content,tempa->index);
-		//    		tempa = tempa->next;
-		// 	}
-		//  	if (mediantemp == NULL)
-		// 	{
-		// 		printf(" \n");
-		// 	}
-		// 	else if( mediantemp->content )
-		// 	{ 
-		//    		printf("\t\t*** %d : %d\n" ,mediantemp->content,mediantemp->index);
-		//    		mediantemp = mediantemp->next;
-		// 	}
-		// 	i++;
-		// }
+	// 	i = 0;
+	// 	tempa = a;
+	// 	mediantemp = b;
+	// 	printf("---------------------------------\nA\t\t\tB\n\n");
+	// 	while (tempa || mediantemp)
+	// 	{
+	// 		if (tempa == NULL)
+	// 		{
+	// 			printf(" ** ");
+	// 		}
+	// 		else
+	// 		{ 
+	// 	   		printf("%d : %d" ,tempa->content,tempa->index);
+	// 	   		tempa = tempa->next;
+	// 		}
+	// 	 	if (mediantemp == NULL)
+	// 		{
+	// 			printf(" \n");
+	// 		}
+	// 		else if( mediantemp->content )
+	// 		{ 
+	// 	   		printf("\t\t*** %d : %d\n" ,mediantemp->content,mediantemp->index);
+	// 	   		mediantemp = mediantemp->next;
+	// 		}
+	// 		i++;
+	// 	}
 	// 	// i = 0;
 	// 	// tempa = a;
 	// 	// while (tempa)
@@ -200,6 +195,6 @@ int main(int argc , char **argv)
 	 }
 	 else
 	 	write(1,"Error\n",6);
-	//printf("*Moves* : %d\n" , moves);
+	// printf("*Moves* : %d\n" , moves);
 	return(0);
 }
