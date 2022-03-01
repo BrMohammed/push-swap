@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Tue Mar  1 16:41:03 2022
+# Make data base, printed on Tue Mar  1 21:21:05 2022
 
 # Variables
 
@@ -43,11 +43,11 @@ ADD = git add .
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n0000h5m00041d/T/vscode-ipc-1ebeb70d-abf7-4613-85c5-9a523d2a8d64.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n0000h5m00041d/T/vscode-ipc-aa8356df-f425-4b37-b6df-61d6d833cddb.sock
 # environment
 VSCODE_CWD = /
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.MSEi70EZjs/Render
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.iXsrhGKh6g/Render
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # makefile (from `Makefile', line 35)
@@ -63,7 +63,7 @@ ELECTRON_RUN_AS_NODE = 1
 # makefile (from `Makefile', line 30)
 read := @echo "Add Commit Plz !!" && read -p "-> " enter && git commit -m $${enter}
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.q7YqePgaKl/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.IBGRWRBtUK/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -159,7 +159,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 93296
+VSCODE_PID = 40724
 # makefile (from `Makefile', line 7)
 FILES = push_swap.c 
 # variable set hash-table stats:
@@ -184,7 +184,8 @@ FILES = push_swap.c
 # Not a target:
 push_swap.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-03-01 16:31:08
+ 
+#  Last modified 2022-03-01 18:30:29
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -254,7 +255,7 @@ clean:
 
 push_swap: push_swap.c
 #  Implicit rule search has not been done.
-#  Last modified 2022-03-01 16:31:10
+#  Last modified 2022-03-01 18:30:31
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -276,6 +277,6 @@ push_swap: push_swap.c
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Mar  1 16:41:03 2022
+# Finished Make data base on Tue Mar  1 21:21:05 2022
 
  

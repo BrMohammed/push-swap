@@ -56,9 +56,9 @@ int main(int argc , char **argv)
 			z = f/1;
 		}
 		else if(f <= 100)
-			z = f/6 + 1;
+			z = f/7;
 		else
-			z = f/11.2;
+			z = f/14;
 		insert_the_index(a,f);
 		tempa = a;
 		tempb = b;
