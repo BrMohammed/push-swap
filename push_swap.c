@@ -14,7 +14,7 @@ int main(int argc , char **argv)
 	t_list *new;
 	t_list *temp;
 	t_list *tempa;
-	t_list *mediantemp;
+	 t_list *mediantemp;
 	t_list *tempb;
 	
 
@@ -56,7 +56,7 @@ int main(int argc , char **argv)
 			z = f/1;
 		}
 		else if(f <= 100)
-			z = f/6;
+			z = f/6 + 1;
 		else
 			z = f/11.2;
 		insert_the_index(a,f);
@@ -64,37 +64,18 @@ int main(int argc , char **argv)
 		tempb = b;
 		g = 0;
 		y = z;
-		while(g < f - z)
+		int nn = z;
+		int bb = z;
+		int gg = 0;
+		while(a)
 		{
-			// tempa = a;
-			// if(a)
-			// {
-			// 	i = 0;
-			// 	while(tempa)
-			// 	{
-			// 		tempa = tempa->next;
-			// 		i++;
-			// 	}
-			// }
-			// if(f <= 100)
-			// 	z = i/4;
-			// else
-			// 	z = i/10;
-			// //y = y + z + 1;
 			while(g < y)
 			{
-				temp = a;
-				if(temp)
+				if(a)
 				{
-					int v = 0;
-					while(temp->index > y && temp->next)
+					while(a->index > y)
 					{
-						temp = temp->next;
-						v++;
-					}
-					while(temp->index != a->index)
-					{
-						if(a->index > f - z && a->index <= f)
+						if(a->index > f - (nn + bb) && a->index <= f - bb)
 						{
 							pb(&a,&b);
 							write(1,"pb\n",3);
@@ -111,19 +92,18 @@ int main(int argc , char **argv)
 						}
 						
 					}
-					if(temp->index == a->index)
-					{
-						pb(&a,&b);
-						write(1,"pb\n",3);
-						moves++;
-					}
+					pb(&a,&b);
+					write(1,"pb\n",3);
+					moves++;
 				}
 				g++;
+				gg++;
+				if (gg == nn)
+				{
+					bb = 0;
+				}
 			}
-			//y = y + z;
 			y = y + z;
-			// y = y + (z*2) + 1;
-			
 		}
 		t = f;
 		while(t > 0)
@@ -178,43 +158,43 @@ int main(int argc , char **argv)
 		
 
 		///////////////------showing------////////////////////
-		i = 0;
-		tempa = a;
-		mediantemp = b;
-		printf("---------------------------------\nA\t\t\tB\n\n");
-		while (tempa || mediantemp)
-		{
-			if (tempa == NULL)
-			{
-				printf(" ** ");
-			}
-			else
-			{ 
-		   		printf("%d : %d" ,tempa->content,tempa->index);
-		   		tempa = tempa->next;
-			}
-		 	if (mediantemp == NULL)
-			{
-				printf(" \n");
-			}
-			else if( mediantemp->content )
-			{ 
-		   		printf("\t\t*** %d : %d\n" ,mediantemp->content,mediantemp->index);
-		   		mediantemp = mediantemp->next;
-			}
-			i++;
-		}
-		// i = 0;
-		// tempa = a;
-		// while (tempa)
-		// {
-		//    	printf("%d : %d\n" ,tempa->content,tempa->index);
-		//    	tempa = tempa->next;
-		// 	i++;
-		// }
-	}
-	else
-		write(1,"Error\n",6);
-	printf("*Moves* : %d\n" , moves);
+	// 	i = 0;
+	// 	tempa = a;
+	// 	mediantemp = b;
+	// 	printf("---------------------------------\nA\t\t\tB\n\n");
+	// 	while (tempa || mediantemp)
+	// 	{
+	// 		if (tempa == NULL)
+	// 		{
+	// 			printf(" ** ");
+	// 		}
+	// 		else
+	// 		{ 
+	// 	   		printf("%d : %d" ,tempa->content,tempa->index);
+	// 	   		tempa = tempa->next;
+	// 		}
+	// 	 	if (mediantemp == NULL)
+	// 		{
+	// 			printf(" \n");
+	// 		}
+	// 		else if( mediantemp->content )
+	// 		{ 
+	// 	   		printf("\t\t*** %d : %d\n" ,mediantemp->content,mediantemp->index);
+	// 	   		mediantemp = mediantemp->next;
+	// 		}
+	// 		i++;
+	// 	}
+	// 	// i = 0;
+	// 	// tempa = a;
+	// 	// while (tempa)
+	// 	// {
+	// 	//    	printf("%d : %d\n" ,tempa->content,tempa->index);
+	// 	//    	tempa = tempa->next;
+	// 	// 	i++;
+	// 	// }
+	 }
+	 else
+	 	write(1,"Error\n",6);
+	// printf("*Moves* : %d\n" , moves);
 	return(0);
 }
