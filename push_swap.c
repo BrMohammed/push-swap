@@ -51,39 +51,41 @@ int main(int argc , char **argv)
 			tempa = tempa->next;
 			f++;
 		}
-		// if(f <= 100)
-		// 	z = f/3;
-		// else
-		// 	z = f/11.2;
+		if(f <= 5)
+		{
+			z = f/1;
+		}
+		else if(f <= 100)
+			z = f/6;
+		else
+			z = f/11.2;
 		insert_the_index(a,f);
 		tempa = a;
 		tempb = b;
 		g = 0;
-		y = 0;
-		while(g < f)
+		y = z;
+		while(g < f - z)
 		{
-			tempa = a;
-			if(a)
-			{
-				i = 0;
-				while(tempa)
-				{
-					tempa = tempa->next;
-					i++;
-				}
-			}
-			if(f <= 100)
-				z = i/3.3;
-			else
-				z = i/7.8;
-			y = y + z + 1;
+			// tempa = a;
+			// if(a)
+			// {
+			// 	i = 0;
+			// 	while(tempa)
+			// 	{
+			// 		tempa = tempa->next;
+			// 		i++;
+			// 	}
+			// }
+			// if(f <= 100)
+			// 	z = i/4;
+			// else
+			// 	z = i/10;
+			// //y = y + z + 1;
 			while(g < y)
 			{
-				
 				temp = a;
 				if(temp)
-				{	
-					
+				{
 					int v = 0;
 					while(temp->index > y && temp->next)
 					{
@@ -92,9 +94,22 @@ int main(int argc , char **argv)
 					}
 					while(temp->index != a->index)
 					{
-						ra(&a);
-						write(1,"ra\n",3);
-						moves++;
+						if(a->index > f - z && a->index <= f)
+						{
+							pb(&a,&b);
+							write(1,"pb\n",3);
+							moves++;
+							rb(&b);
+							write(1,"rb\n",3);
+							moves++;
+						}
+						else
+						{
+							ra(&a);
+							write(1,"ra\n",3);
+							moves++;
+						}
+						
 					}
 					if(temp->index == a->index)
 					{
@@ -105,6 +120,10 @@ int main(int argc , char **argv)
 				}
 				g++;
 			}
+			//y = y + z;
+			y = y + z;
+			// y = y + (z*2) + 1;
+			
 		}
 		t = f;
 		while(t > 0)
