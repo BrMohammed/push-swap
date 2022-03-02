@@ -53,7 +53,7 @@ int main(int argc , char **argv)
 		}
 		if(f <= 5)
 		{
-			z = f/1;
+			z = f;
 		}
 		else if(f <= 100)
 			z = f/7;
@@ -65,16 +65,14 @@ int main(int argc , char **argv)
 		g = 0;
 		y = z;
 		int nn = z + 1;
-		int bb = z;
-		int cc =z;
+		int bb = z + 1;
+		int cc = z + 1;
 		while(a)
 		{
 			while(g < y)
 			{
-				
 				if(a)
 				{
-					
 					while(a->index > y)
 					{
 						if(a->index > f - (nn + bb + cc) && a->index <= f - (bb + cc))
@@ -88,7 +86,6 @@ int main(int argc , char **argv)
 						}
 						else
 						{
-						
 							ra(&a);
 							write(1,"ra\n",3);
 							moves++;
@@ -99,7 +96,7 @@ int main(int argc , char **argv)
 					moves++;
 				}
 				g++;
-				if (g == nn)
+				if (g == nn + 1)
 				{
 					bb = 0;
 				}
@@ -138,9 +135,9 @@ int main(int argc , char **argv)
 			{
 				while(temp->index != b->index)
 				{
-					rrb(&b);
-					write(1,"rrb\n",4);
-					moves++;
+						rrb(&b);
+						write(1,"rrb\n",4);
+						moves++;
 				}
 			}
 			else

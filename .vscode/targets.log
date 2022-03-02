@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Tue Mar  1 21:21:05 2022
+# Make data base, printed on Wed Mar  2 15:02:35 2022
 
 # Variables
 
@@ -16,6 +16,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
+ 
 # environment
 VSCODE_LOG_NATIVE = false
 # automatic
@@ -43,11 +44,11 @@ ADD = git add .
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n0000h5m00041d/T/vscode-ipc-aa8356df-f425-4b37-b6df-61d6d833cddb.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n0000h5m00041d/T/vscode-ipc-b30b8348-5f1a-4b1c-ba0b-e77488e9dbe8.sock
 # environment
 VSCODE_CWD = /
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.iXsrhGKh6g/Render
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.tG5xqn8oAG/Render
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # makefile (from `Makefile', line 35)
@@ -63,7 +64,7 @@ ELECTRON_RUN_AS_NODE = 1
 # makefile (from `Makefile', line 30)
 read := @echo "Add Commit Plz !!" && read -p "-> " enter && git commit -m $${enter}
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.IBGRWRBtUK/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.XC6RUmhyJI/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -131,13 +132,15 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.2452
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000001.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
 __CF_USER_TEXT_ENCODING = 0x102D:0x0:0x0
+# environment
+COMMAND_MODE = unix2003
 # default
 MAKEFILES := 
 # automatic
@@ -146,6 +149,8 @@ MAKEFILES :=
 PAGER = less
 # environment
 LC_ALL = C
+# environment
+SECURITYSESSIONID = 186a8
 # automatic
 ^F = $(notdir $^)
 # makefile (from `Makefile', line 8)
@@ -159,11 +164,11 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 40724
+VSCODE_PID = 1196
 # makefile (from `Makefile', line 7)
 FILES = push_swap.c 
 # variable set hash-table stats:
-# Load=75/1024=7%, Rehash=0, Collisions=1/102=1%
+# Load=77/1024=8%, Rehash=0, Collisions=1/104=1%
 
 # Pattern-specific Variable Values
 
@@ -171,9 +176,9 @@ FILES = push_swap.c
 
 # Directories
 
-# . (device 16777227, inode 1609847): 18 files, no impossibilities.
+# . (device 16777227, inode 1609847): 19 files, no impossibilities.
 
-# 18 files, no impossibilities in 1 directories.
+# 19 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -184,8 +189,7 @@ FILES = push_swap.c
 # Not a target:
 push_swap.c:
 #  Implicit rule search has been done.
- 
-#  Last modified 2022-03-01 18:30:29
+#  Last modified 2022-03-02 00:40:25
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -255,7 +259,7 @@ clean:
 
 push_swap: push_swap.c
 #  Implicit rule search has not been done.
-#  Last modified 2022-03-01 18:30:31
+#  Last modified 2022-03-02 00:40:26
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -277,6 +281,6 @@ push_swap: push_swap.c
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Mar  1 21:21:05 2022
+# Finished Make data base on Wed Mar  2 15:02:35 2022
 
  
