@@ -1,5 +1,18 @@
 # include "push_swap.h"
 
+void print_stack(t_list *list)
+{
+	t_list *tmp;
+	tmp = list;
+	printf("list: ============================\n");
+	while (tmp)
+	{
+		printf("%d => ", tmp->index);
+		tmp = tmp->next;
+	}
+	printf("=================================\n");
+}
+
 int main(int argc , char **argv)
 {
 	int i;
@@ -58,15 +71,20 @@ int main(int argc , char **argv)
 		else if(f <= 100)
 			z = f/7;
 		else
-			z = f/14;
+			z = f/16;
+		//printf("z: %d\n", z);
 		insert_the_index(a,f);
 		tempa = a;
 		tempb = b;
 		g = 0;
 		y = z;
-		int nn = z + 1;
-		int bb = z + 1;
-		int cc = z + 1;
+		int nn = z;
+		int bb = z;
+		int cc = z;
+		int vv = z;
+		int tt = z;
+		int kk = z;
+		int ee = z;
 		while(a)
 		{
 			while(g < y)
@@ -75,7 +93,14 @@ int main(int argc , char **argv)
 				{
 					while(a->index > y)
 					{
-						if(a->index > f - (nn + bb + cc) && a->index <= f - (bb + cc))
+						temp = a;
+						int pp = 0;
+						while(temp->next)
+						{
+							temp = temp->next;
+							pp++;
+						}
+						if((a->index > f - (nn + bb + cc + vv + tt +kk + ee) && a->index <= f - (bb + cc + vv + tt + kk + ee)) || (pp < 15))
 						{
 							pb(&a,&b);
 							write(1,"pb\n",3);
@@ -96,13 +121,29 @@ int main(int argc , char **argv)
 					moves++;
 				}
 				g++;
-				if (g == nn + 1)
+				if (g == nn)
 				{
 					bb = 0;
 				}
-				if(g == nn * 2 + 1)
+				if (g == nn * 2)
 				{
 					cc = 0;
+				}
+				if (g == nn * 3)
+				{
+					vv = 0;
+				}
+				if (g == nn * 4)
+				{
+					tt = 0;
+				}
+				if (g == nn * 5)
+				{
+					kk = 0;
+				}
+				if (g == nn * 6)
+				{
+					ee = 0;
 				}
 			}
 			y = y + z;
