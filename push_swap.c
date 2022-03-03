@@ -41,7 +41,7 @@ int main(int argc , char **argv)
 	{
 		while (argv[i])
 		{
-			if(ft_atoi(argv[i]) == -405)
+			if(ft_isdigit(argv[i]) == 1)
 			{
 				write(1,"Error\n",6);
 				exit(2);

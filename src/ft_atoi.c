@@ -20,8 +20,6 @@ static long	loop(const char *str, int i, int n)
 			n++;
 		}
 	}
-	else
-		return(-405);
 	return (result * i);
 }
 

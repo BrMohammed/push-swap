@@ -25,6 +25,8 @@ void	ft_lstadd_front(t_list **lst, t_list *new);
 t_list	*ft_lstlast_beforlast(t_list *lst);
 int	check_double(t_list *a);
 void insert_the_index(t_list *a,int i);
+int	ft_isdigit(char *c);
+
 
 void sa(t_list **a);
 void sb(t_list **b);

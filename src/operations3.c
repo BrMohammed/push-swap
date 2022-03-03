@@ -26,3 +26,23 @@ int	check_double(t_list *a)
 	}
 	return(0);
 }
+
+int	ft_isdigit01(int c)
+{
+	if (c >= '0' && c <= '9')
+	{
+		return (1);
+	}
+	return (0);
+}
+int	ft_isdigit(char *c)
+{
+	int n = 0;
+	while(c[n])
+	{
+		if(ft_isdigit01(c[n]) == 0)
+			return(1);
+		n++;
+	}
+	return(0);
+}
