@@ -38,6 +38,9 @@ int	ft_isdigit01(int c)
 int	ft_isdigit(char *c)
 {
 	int n = 0;
+	
+	if(c[0] == '\0')
+		return(1);
 	while(c[n])
 	{
 		if(ft_isdigit01(c[n]) == 0)

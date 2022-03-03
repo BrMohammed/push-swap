@@ -26,6 +26,7 @@ t_list	*ft_lstlast_beforlast(t_list *lst);
 int	check_double(t_list *a);
 void insert_the_index(t_list *a,int i);
 int	ft_isdigit(char *c);
+void less_than_5(t_list **a, t_list **b,int f);
 
 
 void sa(t_list **a);

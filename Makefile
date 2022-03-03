@@ -5,7 +5,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 FILES = push_swap.c 
-SRC_FILES=$(addprefix src/, lstnew.c ft_strcmp.c ft_atoi.c operations.c operations2.c operations3.c insert_the_index.c)
+SRC_FILES=$(addprefix src/, lstnew.c ft_strcmp.c ft_atoi.c operations.c operations2.c operations3.c insert_the_index.c less_than_5.c)
 RM = rm -f
 
 #bash tester.sh ../../push-swap ...  
