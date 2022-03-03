@@ -7,7 +7,7 @@ void print_stack(t_list *list)
 	printf("list: ============================\n");
 	while (tmp)
 	{
-		printf("%d => ", tmp->index);
+		printf("%d => ", tmp->content);
 		tmp = tmp->next;
 	}
 	printf("=================================\n");
@@ -55,6 +55,7 @@ int main(int argc , char **argv)
 			write(1,"Error\n",6);
 			exit(2);
 		}
+		
 		tempa = a;
 		i = 0;
 		/////////calcule the length ////////
@@ -64,16 +65,95 @@ int main(int argc , char **argv)
 			tempa = tempa->next;
 			f++;
 		}
+		insert_the_index(a,f);
 		if(f <= 5)
 		{
-			z = f;
+
+			//temp = a;
+			if(f > 3)
+			{
+				z = 1;
+				while(z < 3)
+				{
+					while(a->index != z)
+					{
+						ra(&a);
+						write(1,"ra\n",3);
+						moves++;
+					}
+					pb(&a,&b);
+					write(1,"pb\n",3);
+					moves++;
+					z++;
+				}
+			}
+			temp = a;
+			while(temp)
+			{
+				tempa = ft_lstlast(a);
+				temp = a;
+				while(temp)
+				{
+					temp = ft_lstlast(a);
+					mediantemp = a;
+					while(mediantemp->content < mediantemp->next->content )
+					{
+						mediantemp = mediantemp->next;
+						if(mediantemp->next == NULL)
+							break;
+					}
+
+					if(a->content > a->next->content)
+					{
+						sa(&a);
+						write(1,"sa\n",3);
+						moves++;
+					}
+					tempa = ft_lstlast(a);
+					if(mediantemp->content > tempa->content)
+					{
+						rra(&a);
+						write(1,"rra\n",4);
+						moves++;
+						temp = a;
+					}
+					tempa = ft_lstlast(a);
+					if(a->content > tempa->content && a->content > mediantemp->content)
+					{
+						ra(&a);
+						write(1,"ra\n",3);
+						moves++;
+						temp = a;
+					}
+					// if(temp->next != NULL)
+					// {
+					// 	while(b)
+					// 	{
+					// 		pa(&a,&b);
+					// 		write(1,"pa\n",3);
+					// 		moves++;
+					// 	}
+					// }
+					temp = temp->next;
+				}
+			}
+			while(b)
+			{
+				pa(&a,&b);
+				write(1,"pa\n",3);
+				moves++;
+			}
+			//print_stack(a);
+		//	print_stack(a);
+			exit(0);
+			
+
 		}
 		else if(f <= 100)
 			z = f/7;
 		else
 			z = f/14;
-		//printf("z: %d\n", z);
-		insert_the_index(a,f);
+		
 		tempa = a;
 		tempb = b;
 		g = 0;
