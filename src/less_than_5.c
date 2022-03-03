@@ -16,7 +16,7 @@ void if_more_than_3(int z,t_list **a, t_list **b)
     }
 }
 
-t_list *middle(t_list *mediantemp, t_list *tempa,t_list *temp,t_list **a)
+void middle(t_list *mediantemp, t_list *tempa,t_list *temp,t_list **a)
 {
      while(mediantemp->content < mediantemp->next->content )
     {
@@ -43,7 +43,6 @@ t_list *middle(t_list *mediantemp, t_list *tempa,t_list *temp,t_list **a)
         write(1,"ra\n",3);
         temp = (*a);
     }
-    return(temp);
 }
 
 void less_than_5(t_list **a, t_list **b,int f)
@@ -65,34 +64,8 @@ void less_than_5(t_list **a, t_list **b,int f)
         {
            temp = ft_lstlast(*a);
             mediantemp = *a;
-            temp = middle(mediantemp,tempa,temp,a);
+            middle(mediantemp,tempa,temp,a);
             temp = temp->next;
-        //     while(mediantemp->content < mediantemp->next->content )
-        //     {
-        //         mediantemp = mediantemp->next;
-        //         if(mediantemp->next == NULL)
-        //             break;
-        //     }
-        //     if(a->content > a->next->content)
-        //     {
-        //         sa(&a);
-        //         write(1,"sa\n",3);
-        //     }
-        //     tempa = ft_lstlast(a);
-        //     if(mediantemp->content > tempa->content)
-        //     {
-        //         rra(&a);
-        //         write(1,"rra\n",4);
-        //         temp = a;
-        //     }
-        //     tempa = ft_lstlast(a);
-        //     if(a->content > tempa->content && a->content > mediantemp->content)
-        //     {
-        //         ra(&a);
-        //         write(1,"ra\n",3);
-        //         temp = a;
-        //     }
-        //     temp = temp->next;
         }
     }
     while(*b)
