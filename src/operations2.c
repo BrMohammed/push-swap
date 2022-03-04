@@ -6,7 +6,7 @@
 /*   By: brmohamm <brmohamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 03:07:44 by brmohamm          #+#    #+#             */
-/*   Updated: 2022/03/04 03:10:00 by brmohamm         ###   ########.fr       */
+/*   Updated: 2022/03/04 22:15:14 by brmohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	rra(t_list **a)
 	*a = var.temp->next;
 	var.temp->next = NULL;
 	var.temp = NULL;
+	write(1, "rra\n", 4);
 }
 /*rrb send the last one in 'b' to the first*/
 

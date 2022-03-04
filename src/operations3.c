@@ -6,7 +6,7 @@
 /*   By: brmohamm <brmohamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 03:10:06 by brmohamm          #+#    #+#             */
-/*   Updated: 2022/03/04 04:03:04 by brmohamm         ###   ########.fr       */
+/*   Updated: 2022/03/04 21:31:32 by brmohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	check_order(t_list *a)
 
 int	ft_isdigit01(int c)
 {
-	if (c >= '0' && c <= '9')
+	if ((c >= '0' && c <= '9') || c == '-')
 	{
 		return (1);
 	}
@@ -68,6 +68,8 @@ int	ft_isdigit(char *c)
 
 	n = 0;
 	if (c[0] == '\0')
+		return (1);
+	if (c[0] == '-' && c[1] == '\0')
 		return (1);
 	while (c[n])
 	{

@@ -23,7 +23,6 @@ typedef struct s_list
 {
 	int				content;
 	int				index;
-	int				moved;
 	struct s_list	*prev;
 	struct s_list	*next;
 }	t_list;
@@ -66,5 +65,7 @@ void	rrb(t_list **b);
 void	ss(t_list **a, t_list **b);
 void	rr(t_list **a, t_list **b);
 void	rrr(t_list **a, t_list **b);
+
+void	print_stack(t_list *list);
 
 #endif

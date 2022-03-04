@@ -1,7 +1,5 @@
 # include "push_swap.h"
 
-
-
 int main(int argc , char **argv)
 {
 	int i;
@@ -22,19 +20,9 @@ int main(int argc , char **argv)
 	{
 		while (argv[i])
 		{
-			if(ft_atoi(argv[i]) == -405)
-			{
-				write(1,"Error\n",6);
-				exit(2);
-			}
 			new = ft_lstnew(ft_atoi(argv[i]));
 			ft_lstadd_back(&a,new);
 			i++;
-		}
-		if(check_double(a) == -1)
-		{
-			write(1,"Error\n",6);
-			exit(2);
 		}
 		tempa = a;
 		i = 0;
@@ -44,10 +32,8 @@ int main(int argc , char **argv)
 			tempa = tempa->next;
 			i++;
 		}
-		
 		/////////////////////////////////////
 
-		
 		tempa = a;
 		while(tempa)
 		{
@@ -155,34 +141,34 @@ int main(int argc , char **argv)
 		}
 		
 		///////////////////------showing------////////////////////
-		i = 0;
-		tempa = a;
-		mediantemp = b;
-		while (tempa || mediantemp)
-		{
-			if (tempa == NULL)
-			{
-				printf(" -");
-			}
-			else
-			{ 
-		   		printf("%d-" ,tempa->content);
-		   		tempa = tempa->next;
-			}
-		 	if (mediantemp == NULL)
-			{
-				printf(" \n");
-			}
-			else if( mediantemp->content )
-			{ 
-		   		printf("%d\n" ,mediantemp->content);
-		   		mediantemp = mediantemp->next;
-			}
-			i++;
-		}
+		// i = 0;
+		// tempa = a;
+		// mediantemp = b;
+		// while (tempa || mediantemp)
+		// {
+		// 	if (tempa == NULL)
+		// 	{
+		// 		printf(" -");
+		// 	}
+		// 	else
+		// 	{ 
+		//    		printf("%d-" ,tempa->content);
+		//    		tempa = tempa->next;
+		// 	}
+		//  	if (mediantemp == NULL)
+		// 	{
+		// 		printf(" \n");
+		// 	}
+		// 	else if( mediantemp->content )
+		// 	{ 
+		//    		printf("%d\n" ,mediantemp->content);
+		//    		mediantemp = mediantemp->next;
+		// 	}
+		// 	i++;
+		// }
 	}
 	else
 		write(1,"Error\n",6);
-	printf("*Moves* : %d\n" , moves);
+	//printf("*Moves* : %d\n" , moves);
 	return(0);
 }

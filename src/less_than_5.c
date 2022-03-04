@@ -6,7 +6,7 @@
 /*   By: brmohamm <brmohamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 14:31:00 by brmohamm          #+#    #+#             */
-/*   Updated: 2022/03/04 02:13:57 by brmohamm         ###   ########.fr       */
+/*   Updated: 2022/03/04 22:16:04 by brmohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,22 @@ void	if_more_than_3(int z, t_list **a, t_list **b)
 
 void	middle(t_list *mediantemp, t_list *tempa, t_list *temp, t_list **a)
 {
-	while (mediantemp->content < mediantemp->next->content)
+	while (mediantemp->index < mediantemp->next->index)
 	{
 		mediantemp = mediantemp->next;
 		if (mediantemp->next == NULL)
 			break ;
 	}
-	if ((*a)->content > (*a)->next->content)
+	if ((*a)->index > (*a)->next->index)
 		sa(a);
 	tempa = ft_lstlast((*a));
-	if (mediantemp->content > tempa->content)
+	if (mediantemp->index > tempa->index)
 	{
 		rra(a);
 		temp = (*a);
 	}
 	tempa = ft_lstlast((*a));
-	if ((*a)->content > tempa->content && (*a)->content > mediantemp->content)
+	if ((*a)->index > tempa->index && (*a)->index > mediantemp->index)
 	{
 		ra(a);
 		temp = (*a);
@@ -78,5 +78,6 @@ void	less_than_5(t_list **a, t_list **b, int f)
 		}
 	}
 	from_b_to_a(a, b);
+	//print_stack(*a);
 	exit(0);
 }

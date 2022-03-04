@@ -20,7 +20,7 @@ void	print_stack(t_list *list)
 	printf("list: ============================\n");
 	while (tmp)
 	{
-		printf("%d => ", tmp->content);
+		printf("%d => %d\n", tmp->content,tmp->index);
 		tmp = tmp->next;
 	}
 	printf("=================================\n");
@@ -95,6 +95,7 @@ int	main(int argc, char **argv)
 		insert_the_index(a, var.f);
 		rang(&a, &b, &var);
 		more_than_5(&a, &b, &var);
+		// print_stack(a);
 	}
 	else
 		write(1, "Error\n", 6);

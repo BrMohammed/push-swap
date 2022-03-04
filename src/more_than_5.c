@@ -6,7 +6,7 @@
 /*   By: brmohamm <brmohamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 03:01:24 by brmohamm          #+#    #+#             */
-/*   Updated: 2022/03/04 03:04:17 by brmohamm         ###   ########.fr       */
+/*   Updated: 2022/03/04 22:00:55 by brmohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	a_empti( t_list **a, t_list **b, t_variabl *var)
 			var->pp++;
 		}
 		if (((*a)->index > var->f - (var->nn + var->bb)
-				&& (*a)->index <= var->f - var->bb) || (var->pp < 17))
+				&& (*a)->index <= var->f - var->bb))
 		{
 			pb(a, b);
 			rb(b);

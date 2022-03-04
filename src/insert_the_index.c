@@ -6,7 +6,7 @@
 /*   By: brmohamm <brmohamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 03:12:23 by brmohamm          #+#    #+#             */
-/*   Updated: 2022/03/04 03:26:46 by brmohamm         ###   ########.fr       */
+/*   Updated: 2022/03/04 21:48:01 by brmohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,7 @@ void	insert_the_index(t_list *a, int i)
 				tempa = tempa->next;
 			t++;
 		}
-		if (indextemp->content != -1)
-			indextemp->index = g;
+		indextemp->index = g;
 		t = 0;
 		g--;
 	}
