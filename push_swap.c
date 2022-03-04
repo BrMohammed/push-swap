@@ -47,6 +47,8 @@ void	check_and_creat_a(char **argv, t_variabl *var, t_list **a)
 		write(1, "Error\n", 6);
 		exit(2);
 	}
+	if (check_order(*a) == -1)
+		exit (2);
 }
 
 void	lenth_of_a(t_list *a, t_variabl *var)

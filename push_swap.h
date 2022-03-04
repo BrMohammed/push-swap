@@ -49,6 +49,7 @@ int		ft_strcmp( const char *s1, const char *s2);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 t_list	*ft_lstlast_beforlast(t_list *lst);
 int		check_double(t_list *a);
+int		check_order(t_list *a);
 void	insert_the_index(t_list *a, int i);
 int		ft_isdigit(char *c);
 void	less_than_5(t_list **a, t_list **b, int f);

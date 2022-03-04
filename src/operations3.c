@@ -6,7 +6,7 @@
 /*   By: brmohamm <brmohamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 03:10:06 by brmohamm          #+#    #+#             */
-/*   Updated: 2022/03/04 03:11:26 by brmohamm         ###   ########.fr       */
+/*   Updated: 2022/03/04 04:03:04 by brmohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,18 @@ int	check_double(t_list *a)
 			temp = a;
 		}
 	}
+	return (0);
+}
+
+int	check_order(t_list *a)
+{
+	t_list	*temp;
+
+	temp = a;
+	while (temp-> next && temp->content < temp->next->content)
+		temp = temp->next;
+	if (temp->next == NULL)
+		return (-1);
 	return (0);
 }
 
