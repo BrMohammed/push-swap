@@ -12,6 +12,7 @@ void rb(t_list **b) //rb send the first one in 'b' to the last
 	(*b)->prev = NULL;
 	var.temp->next->next = NULL;
 	var.temp = NULL; 
+	write(1,"rb\n",3);
 }
 
 void rra(t_list **a) //rra send the last one in 'a' to the first
@@ -40,6 +41,7 @@ void rrb(t_list **b) //rrb send the last one in 'b' to the first
 	*b = var.temp->next;
 	var.temp->next = NULL;
 	var.temp = NULL;
+	write(1,"rrb\n",4);
 }
 
 void ss(t_list **a,t_list **b) //--ss-- sa and sb
@@ -47,6 +49,7 @@ void ss(t_list **a,t_list **b) //--ss-- sa and sb
 	sa(a);
 	if(*b != NULL)
 		sb(b);
+	write(1,"ss\n",3);
 }
 
 void rr(t_list **a,t_list **b) //---rr :  ra and rb----////
@@ -54,4 +57,5 @@ void rr(t_list **a,t_list **b) //---rr :  ra and rb----////
 	ra(a);
 	if(*b != NULL)
 		rb(b);
+	write(1,"rr\n",3);
 }

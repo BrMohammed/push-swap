@@ -28,6 +28,19 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+typedef struct s_variabl
+{
+	t_list *temp;
+	int f;
+	int g;
+	int y;
+	int z;
+	int pp;
+	int nn;
+	int bb;
+
+} t_variabl;
+
 int	ft_atoi(char *str);
 t_list	*ft_lstnew(int content);
 void	ft_lstadd_back(t_list **lst, t_list *new);
@@ -39,7 +52,7 @@ int	check_double(t_list *a);
 void insert_the_index(t_list *a,int i);
 int	ft_isdigit(char *c);
 void less_than_5(t_list **a, t_list **b,int f);
-
+void more_than_5(t_list **a, t_list **b, t_variabl *var);
 
 void sa(t_list **a);
 void sb(t_list **b);
@@ -53,10 +66,5 @@ void ss(t_list **a,t_list **b);
 void rr(t_list **a,t_list **b);
 void rrr(t_list **a,t_list **b);
 
-typedef struct s_variabl
-{
-	t_list *temp;
-
-} t_variabl;
 
 #endif

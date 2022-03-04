@@ -5,6 +5,7 @@ void rrr(t_list **a,t_list **b) //-rrr : rra and rrb at the same time.
 	rra(a);
 	if(*b != NULL)
 		rrb(b);
+	write(1,"rrr\n",4);
 }
 
 int	check_double(t_list *a)

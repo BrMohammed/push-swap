@@ -12,6 +12,7 @@ void sa(t_list **a) //sa revest the ferst and the seconde in 'a'
 	(*a)->next = var.temp;
 	(*a)->prev = NULL;
 	var.temp = NULL;
+	write(1,"sa\n",3);
 }
 
 void sb(t_list **b) //sb revest the ferst and the seconde in 'b'
@@ -26,6 +27,7 @@ void sb(t_list **b) //sb revest the ferst and the seconde in 'b'
 	(*b)->next = var.temp;
 	(*b)->prev = NULL;
 	var.temp = NULL;
+	write(1,"sb\n",3);
 }
 
 void pb(t_list **a, t_list **b) //pb send the first one in 'a' to the first in 'b'
@@ -43,6 +45,7 @@ void pb(t_list **a, t_list **b) //pb send the first one in 'a' to the first in '
 	var.temp->next = *b;
 	*b = var.temp;
 	var.temp = NULL;
+	write(1,"pb\n",3);
 }
 
 void pa(t_list **a, t_list **b) //pa send the first one in 'b' to the first in 'a'
@@ -55,6 +58,7 @@ void pa(t_list **a, t_list **b) //pa send the first one in 'b' to the first in '
 	var.temp->next = *a;
 	*a = var.temp;
 	var.temp = NULL;
+	write(1,"pa\n",3);
 }
 
 void ra(t_list **a) //ra send the first one in 'a' to the last
@@ -68,5 +72,6 @@ void ra(t_list **a) //ra send the first one in 'a' to the last
 	*a = (*a)->next;
 	(*a)->prev = NULL;
 	var.temp->next->next = NULL;
-	var.temp = NULL; 
+	var.temp = NULL;
+	write(1,"ra\n",3);
 }

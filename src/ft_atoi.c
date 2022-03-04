@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: brmohamm <brmohamm@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/04 02:15:08 by brmohamm          #+#    #+#             */
+/*   Updated: 2022/03/04 02:15:08 by brmohamm         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # include "../push_swap.h"
 
 static long	loop(const char *str, int i, int n)
@@ -7,7 +19,7 @@ static long	loop(const char *str, int i, int n)
 
 	result = 0;
 	help = 0;
-	if(str[n] >= '0' && str[n] <= '9')
+	if (str[n] >= '0' && str[n] <= '9')
 	{
 		while (str[n] >= '0' && str[n] <= '9')
 		{
@@ -33,7 +45,7 @@ int	ft_atoi(char *str)
 	i = 1;
 	n = 0;
 	while (str[n] == '\f' || str[n] == '\n' || str[n] == 32
-		|| str[n] == '\r' || str[n] == '\v' || str[n] == '\t')
+			|| str[n] == '\r' || str[n] == '\v' || str[n] == '\t')
 		n++;
 	if (str[n] == '-')
 	{
