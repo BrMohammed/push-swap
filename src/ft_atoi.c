@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../push_swap.h"
+#include "../push_swap.h"
 
 static long	loop(const char *str, int i, int n)
 {
@@ -45,7 +45,7 @@ int	ft_atoi(char *str)
 	i = 1;
 	n = 0;
 	while (str[n] == '\f' || str[n] == '\n' || str[n] == 32
-			|| str[n] == '\r' || str[n] == '\v' || str[n] == '\t')
+		|| str[n] == '\r' || str[n] == '\v' || str[n] == '\t')
 		n++;
 	if (str[n] == '-')
 	{

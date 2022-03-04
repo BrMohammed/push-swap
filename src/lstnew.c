@@ -1,4 +1,16 @@
-# include "../push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   lstnew.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: brmohamm <brmohamm@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/04 03:00:21 by brmohamm          #+#    #+#             */
+/*   Updated: 2022/03/04 03:00:21 by brmohamm         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../push_swap.h"
 
 t_list	*ft_lstnew(int content)
 {
@@ -32,9 +44,7 @@ t_list	*ft_lstlast_beforlast(t_list *lst)
 	if (lst)
 	{
 		while (lst->next->next != NULL)
-		{
 			lst = lst->next;
-		}	
 	}
 	return (lst);
 }
@@ -45,11 +55,9 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	if (*lst)
 	{	
-		
 		temp = ft_lstlast(*lst);
 		new->prev = temp;
 		temp->next = new;
-		
 	}
 	else
 		*lst = new;
