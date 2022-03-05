@@ -20,7 +20,7 @@ void	print_stack(t_list *list)
 	printf("list: ============================\n");
 	while (tmp)
 	{
-		printf("%d => %d\n", tmp->content,tmp->index);
+		printf("%d => %d\n", tmp->content, tmp->index);
 		tmp = tmp->next;
 	}
 	printf("=================================\n");
@@ -66,11 +66,12 @@ void	lenth_of_a(t_list *a, t_variabl *var)
 
 void	rang(t_list **a, t_list **b, t_variabl *var)
 {
+	var->z = 0;
 	if (var->f <= 5)
 		less_than_5(a, b, var->f);
 	else if (var->f > 5 && var->f <= 70)
 		var->z = var->f / 2;
-	else if (var->f > 70)
+	else if (var->f <= 100)
 		var->z = var->f / 7;
 	else
 		var->z = var->f / 14;
@@ -85,7 +86,6 @@ int	main(int argc, char **argv)
 
 	var.f = 1;
 	b = NULL;
-	a = NULL;
 	temp = NULL;
 	var.z = 0;
 	if (argc > 2)
@@ -95,7 +95,6 @@ int	main(int argc, char **argv)
 		insert_the_index(a, var.f);
 		rang(&a, &b, &var);
 		more_than_5(&a, &b, &var);
-		// print_stack(a);
 	}
 	else
 		write(1, "Error\n", 6);

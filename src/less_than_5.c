@@ -6,7 +6,7 @@
 /*   By: brmohamm <brmohamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 14:31:00 by brmohamm          #+#    #+#             */
-/*   Updated: 2022/03/04 22:16:04 by brmohamm         ###   ########.fr       */
+/*   Updated: 2022/03/05 04:10:51 by brmohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,5 @@ void	less_than_5(t_list **a, t_list **b, int f)
 		}
 	}
 	from_b_to_a(a, b);
-	//print_stack(*a);
 	exit(0);
 }
