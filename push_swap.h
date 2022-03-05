@@ -37,6 +37,8 @@ typedef struct s_variabl
 	int		pp;
 	int		nn;
 	int		bb;
+	int		cc;
+	int		gg;
 
 }	t_variabl;
 

@@ -72,9 +72,9 @@ void	rang(t_list **a, t_list **b, t_variabl *var)
 	else if (var->f > 5 && var->f <= 70)
 		var->z = var->f / 2;
 	else if (var->f <= 100)
-		var->z = var->f / 7.1;
+		var->z = var->f / 7.8;
 	else
-		var->z = var->f / 12.1;
+		var->z = var->f / 14;
 }
 
 int	main(int argc, char **argv)

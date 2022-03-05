@@ -6,7 +6,7 @@
 /*   By: brmohamm <brmohamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 03:01:24 by brmohamm          #+#    #+#             */
-/*   Updated: 2022/03/05 04:35:51 by brmohamm         ###   ########.fr       */
+/*   Updated: 2022/03/06 00:28:52 by brmohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,25 @@ void	a_empti( t_list **a, t_list **b, t_variabl *var)
 	while ((*a)->index > var->y)
 	{
 		temp = (*a);
-		if ((*a)->index > var->f - (var->nn + var->bb)
-				&& (*a)->index <= var->f - var->bb)
+		if (*a && (*a)->index > var->f - (var->nn + var->bb + var->cc)
+				&& (*a)->index <= var->f - (var->bb + var->cc))
 		{
 			pb(a, b);
 			rb(b);
 			temp = (*a);
+			var->gg++;
 		}
 		else
 		{
-			if(temp->next)
+			if(*a && temp->next)
+			{
+				ra(a);
 				temp = temp->next;
-			if(temp->next == NULL)
-				break ;
-			ra(a);
+			}
 		}
 	}
 	pb(a, b);
+	
 }
 
 t_list	*best_way(t_list **b, t_variabl *var, t_list **temp)
@@ -102,6 +104,7 @@ void	more_than_5(t_list **a, t_list **b, t_variabl *var)
 	var->y = var->z;
 	var->nn = var->z;
 	var->bb = var->z;
+	var->cc = var->z;
 	while ((*a))
 	{
 		while (var->g < var->y)
@@ -109,11 +112,15 @@ void	more_than_5(t_list **a, t_list **b, t_variabl *var)
 			if ((*a))
 				a_empti(a, b, var);
 			var->g++;
-			if (var->g == var->nn)
+			if (var->gg == var->nn)
 				var->bb = 0;
+			if (var->gg == var->nn * 2)
+				var->cc = 0;
 		}
 		var->y = var->y + var->z;
 	}
+	while(*a)
+		pb(a, b);
 	var->z = var->f;
 	send_from_b(a, b, var, &temp);
 }
