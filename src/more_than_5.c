@@ -6,7 +6,7 @@
 /*   By: brmohamm <brmohamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 03:01:24 by brmohamm          #+#    #+#             */
-/*   Updated: 2022/03/05 02:22:19 by brmohamm         ###   ########.fr       */
+/*   Updated: 2022/03/05 04:35:51 by brmohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,19 @@ void	a_empti( t_list **a, t_list **b, t_variabl *var)
 	while ((*a)->index > var->y)
 	{
 		temp = (*a);
-		var->pp = 0;
-		while (temp->next)
-		{
-			temp = temp->next;
-			var->pp++;
-		}
-		if (((*a)->index > var->f - (var->nn + var->bb)
-				&& (*a)->index <= var->f - var->bb) || var->pp < 16)
+		if ((*a)->index > var->f - (var->nn + var->bb)
+				&& (*a)->index <= var->f - var->bb)
 		{
 			pb(a, b);
 			rb(b);
+			temp = (*a);
 		}
 		else
 		{
+			if(temp->next)
+				temp = temp->next;
+			if(temp->next == NULL)
+				break ;
 			ra(a);
 		}
 	}
