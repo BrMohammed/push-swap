@@ -2,7 +2,6 @@ NAME = push_swap
 NAME1 = cheker
 # -fsanitize=address
 CC = gcc
-
 CFLAGS = -Wall -Wextra -Werror
 
 FILES = push_swap.c 

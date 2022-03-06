@@ -6,7 +6,7 @@
 /*   By: brmohamm <brmohamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 14:31:00 by brmohamm          #+#    #+#             */
-/*   Updated: 2022/03/06 01:22:11 by brmohamm         ###   ########.fr       */
+/*   Updated: 2022/03/06 22:03:38 by brmohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,18 @@
 
 void	if_more_than_3(int z, t_list **a, t_list **b)
 {
-	z = 1;
-	while (z < 3)
+	z = 2;
+	int vv = 0;
+	while (z < 3 && vv < 2)
 	{
-		while ((*a)->index != z)
+		while ((*a)->index > z)
 			ra(a, 1);
 		pb(a, b, 1);
-		z++;
+		vv++;
+	}
+	if((*b)->index < (*b)->next->index)
+	{
+		sb(b,1);
 	}
 }
 
