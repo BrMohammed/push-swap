@@ -6,7 +6,7 @@
 /*   By: brmohamm <brmohamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 14:31:00 by brmohamm          #+#    #+#             */
-/*   Updated: 2022/03/05 04:10:51 by brmohamm         ###   ########.fr       */
+/*   Updated: 2022/03/06 01:22:11 by brmohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	if_more_than_3(int z, t_list **a, t_list **b)
 	while (z < 3)
 	{
 		while ((*a)->index != z)
-			ra(a);
-		pb(a, b);
+			ra(a, 1);
+		pb(a, b, 1);
 		z++;
 	}
 }
@@ -33,17 +33,17 @@ void	middle(t_list *mediantemp, t_list *tempa, t_list *temp, t_list **a)
 			break ;
 	}
 	if ((*a)->index > (*a)->next->index)
-		sa(a);
+		sa(a, 1);
 	tempa = ft_lstlast((*a));
 	if (mediantemp->index > tempa->index)
 	{
-		rra(a);
+		rra(a, 1);
 		temp = (*a);
 	}
 	tempa = ft_lstlast((*a));
 	if ((*a)->index > tempa->index && (*a)->index > mediantemp->index)
 	{
-		ra(a);
+		ra(a, 1);
 		temp = (*a);
 	}
 }
@@ -51,7 +51,7 @@ void	middle(t_list *mediantemp, t_list *tempa, t_list *temp, t_list **a)
 void	from_b_to_a(t_list **a, t_list **b)
 {
 	while (*b)
-		pa(a, b);
+		pa(a, b, 1);
 }
 
 void	less_than_5(t_list **a, t_list **b, int f)

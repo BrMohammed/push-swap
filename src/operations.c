@@ -6,13 +6,13 @@
 /*   By: brmohamm <brmohamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 03:04:23 by brmohamm          #+#    #+#             */
-/*   Updated: 2022/03/04 03:22:27 by brmohamm         ###   ########.fr       */
+/*   Updated: 2022/03/06 03:59:22 by brmohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 /*sa revest the ferst and the seconde in 'a'*/
-void	sa(t_list **a)
+void	sa(t_list **a, int f)
 {
 	t_variabl	var;
 
@@ -24,11 +24,12 @@ void	sa(t_list **a)
 	(*a)->next = var.temp;
 	(*a)->prev = NULL;
 	var.temp = NULL;
-	write(1, "sa\n", 3);
+	if (f == 1)
+		write(1, "sa\n", 3);
 }
 /*sb revest the ferst and the seconde in 'b'*/
 
-void	sb(t_list **b)
+void	sb(t_list **b, int f)
 {
 	t_variabl	var;
 
@@ -40,11 +41,12 @@ void	sb(t_list **b)
 	(*b)->next = var.temp;
 	(*b)->prev = NULL;
 	var.temp = NULL;
-	write(1, "sb\n", 3);
+	if (f == 1)
+		write(1, "sb\n", 3);
 }
 /*pb send the first one in 'a' to the first in 'b'*/
 
-void	pb(t_list **a, t_list **b)
+void	pb(t_list **a, t_list **b, int f)
 {
 	t_variabl	var;
 
@@ -58,11 +60,12 @@ void	pb(t_list **a, t_list **b)
 	var.temp->next = *b;
 	*b = var.temp;
 	var.temp = NULL;
-	write(1, "pb\n", 3);
+	if (f == 1)
+		write(1, "pb\n", 3);
 }
 /*pa send the first one in 'b' to the first in 'a'*/
 
-void	pa(t_list **a, t_list **b)
+void	pa(t_list **a, t_list **b, int f)
 {
 	t_variabl	var;
 
@@ -72,11 +75,12 @@ void	pa(t_list **a, t_list **b)
 	var.temp->next = *a;
 	*a = var.temp;
 	var.temp = NULL;
-	write(1, "pa\n", 3);
+	if (f == 1)
+		write(1, "pa\n", 3);
 }
 /*ra send the first one in 'a' to the last*/
 
-void	ra(t_list **a)
+void	ra(t_list **a, int f)
 {
 	t_variabl	var;
 
@@ -88,5 +92,6 @@ void	ra(t_list **a)
 	(*a)->prev = NULL;
 	var.temp->next->next = NULL;
 	var.temp = NULL;
-	write(1, "ra\n", 3);
+	if (f == 1)
+		write(1, "ra\n", 3);
 }

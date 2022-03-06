@@ -1,1 +1,1 @@
-{"buildTargets":["all","clean","fclean","push","push_swap","re"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[]},"fileIndex":[]}}
+{"buildTargets":["all","cheker","clean","clean_cheker","fclean","push","push_swap","re","recheker"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[]},"fileIndex":[]}}

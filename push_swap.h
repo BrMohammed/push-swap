@@ -55,18 +55,19 @@ void	insert_the_index(t_list *a, int i);
 int		ft_isdigit(char *c);
 void	less_than_5(t_list **a, t_list **b, int f);
 void	more_than_5(t_list **a, t_list **b, t_variabl *var);
+char	*ft_strjoin(char const *s1, char const *s2);
 
-void	sa(t_list **a);
-void	sb(t_list **b);
-void	pb(t_list **a, t_list **b);
-void	pa(t_list **a, t_list **b);
-void	ra(t_list **a);
-void	rb(t_list **b);
-void	rra(t_list **a);
-void	rrb(t_list **b);
-void	ss(t_list **a, t_list **b);
-void	rr(t_list **a, t_list **b);
-void	rrr(t_list **a, t_list **b);
+void	sa(t_list **a, int fals);
+void	sb(t_list **b, int fals);
+void	pb(t_list **a, t_list **b, int fals);
+void	pa(t_list **a, t_list **b, int fals);
+void	ra(t_list **a, int fals);
+void	rb(t_list **b, int fals);
+void	rra(t_list **a, int fals);
+void	rrb(t_list **b, int fals);
+void	ss(t_list **a, t_list **b, int fals);
+void	rr(t_list **a, t_list **b, int fals);
+void	rrr(t_list **a, t_list **b, int fals);
 
 void	print_stack(t_list *list);
 

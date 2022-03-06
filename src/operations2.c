@@ -6,14 +6,14 @@
 /*   By: brmohamm <brmohamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 03:07:44 by brmohamm          #+#    #+#             */
-/*   Updated: 2022/03/04 22:15:14 by brmohamm         ###   ########.fr       */
+/*   Updated: 2022/03/06 01:26:12 by brmohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 /*rb send the first one in 'b' to the last*/
 
-void	rb(t_list **b)
+void	rb(t_list **b, int f)
 {
 	t_variabl	var;
 
@@ -25,11 +25,12 @@ void	rb(t_list **b)
 	(*b)->prev = NULL;
 	var.temp->next->next = NULL;
 	var.temp = NULL;
-	write(1, "rb\n", 3);
+	if (f == 1)
+		write(1, "rb\n", 3);
 }
 /*rra send the last one in 'a' to the first*/
 
-void	rra(t_list **a)
+void	rra(t_list **a, int f)
 {
 	t_variabl	var;
 
@@ -41,11 +42,12 @@ void	rra(t_list **a)
 	*a = var.temp->next;
 	var.temp->next = NULL;
 	var.temp = NULL;
-	write(1, "rra\n", 4);
+	if (f == 1)
+		write(1, "rra\n", 4);
 }
 /*rrb send the last one in 'b' to the first*/
 
-void	rrb(t_list **b)
+void	rrb(t_list **b, int f)
 {
 	t_variabl	var;
 
@@ -57,23 +59,26 @@ void	rrb(t_list **b)
 	*b = var.temp->next;
 	var.temp->next = NULL;
 	var.temp = NULL;
-	write(1, "rrb\n", 4);
+	if (f == 1)
+		write(1, "rrb\n", 4);
 }
 /*--ss-- sa and sb*/
 
-void	ss(t_list **a, t_list **b)
+void	ss(t_list **a, t_list **b, int f)
 {
-	sa(a);
+	sa(a, 0);
 	if (*b != NULL)
-		sb(b);
-	write(1, "ss\n", 3);
+		sb(b, 0);
+	if (f == 1)
+		write(1, "ss\n", 3);
 }
 /*---rr :  ra and rb----*/
 
-void	rr(t_list **a, t_list **b)
+void	rr(t_list **a, t_list **b, int f)
 {
-	ra(a);
+	ra(a, 0);
 	if (*b != NULL)
-		rb(b);
-	write(1, "rr\n", 3);
+		rb(b, 0);
+	if (f == 1)
+		write(1, "rr\n", 3);
 }
