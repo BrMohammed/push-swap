@@ -6,7 +6,7 @@
 /*   By: brmohamm <brmohamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 03:04:23 by brmohamm          #+#    #+#             */
-/*   Updated: 2022/03/06 05:54:50 by brmohamm         ###   ########.fr       */
+/*   Updated: 2022/03/06 22:54:55 by brmohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	sa(t_list **a, int f)
 {
 	t_variabl	var;
 	
-	if((*a)->next)
+	if((*a) && (*a)->next)
 	{
 		var.temp = NULL;
 		var.temp = *a;
@@ -37,7 +37,7 @@ void	sb(t_list **b, int f)
 {
 	t_variabl	var;
 
-	if((*b)->next)
+	if((*b) && (*b)->next)
 	{
 		var.temp = NULL;
 		var.temp = *b;
@@ -100,7 +100,7 @@ void	ra(t_list **a, int f)
 {
 	t_variabl	var;
 
-	if((*a)->next)
+	if((*a) && (*a)->next)
 	{
 		var.temp = NULL;
 		var.temp = ft_lstlast(*a);
