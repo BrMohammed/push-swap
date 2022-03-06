@@ -25,31 +25,42 @@ void	check_and_creat_a(char **argv, t_variabl *var, t_list **a)
 		
 }
 
+void opp1(t_list **b,void (*f)(t_list **,int))
+{
+	if(*b)
+		f(b, 0);
+}
+void opp2(t_list **a,t_list **b,void (*f)(t_list **,t_list **,int))
+{
+	if(*a)
+		f(a, b, 0);
+}
+
 void compile(char *r,int er,t_list **a, t_list **b)
 {
     // *b = *a;
-    if(ft_strcmp("sa", r) == -10 && *a)
-        sa(a,0);
-   	else if (ft_strcmp("sb", r) == -10  && *b)
-        sb(b,0);
-	else if(ft_strcmp("ss", r) == -10  && *a && *b)
-        ss(a, b, 0);
-   	else if (ft_strcmp("pa", r) == -10  && *a && *b)
-        pa(a, b, 0);
-	else if (ft_strcmp("pb", r) == -10  && *a && *b)
-        pb(a, b, 0);
-	else if (ft_strcmp("ra", r) == -10  && *a)
-        ra(a, 0);
-	else if (ft_strcmp("rb", r) == -10 && *b)
-        rb(b, 0);
-	else if (ft_strcmp("rr", r) == -10 && *a && *b)
-        rr(a, b, 0);
-	else if (ft_strcmp("rra", r) == -10 && *a)
-       rra(a, 0);
-	else if (ft_strcmp("rrb", r) == -10 && *b)
-       rrb(b, 0);
-	else if (ft_strcmp("rrr", r) == -10 && *a && *b)
-        rrr(a, b, 0);
+    if(ft_strcmp("sa", r) == -10)
+        opp1(a,sa);
+   	else if (ft_strcmp("sb", r) == -10)
+        opp1(b,sb);
+	else if(ft_strcmp("ss", r) == -10)
+        opp2(a, b,ss);
+   	else if (ft_strcmp("pa", r) == -10)
+        opp2(a, b,pa);
+	else if (ft_strcmp("pb", r) == -10)
+        opp2(a,b,pb);
+	else if (ft_strcmp("ra", r) == -10 )
+        opp1(a,ra);
+	else if (ft_strcmp("rb", r) == -10)
+        opp1(b,rb);
+	else if (ft_strcmp("rr", r) == -10)
+        opp2(a,b,rr);
+	else if (ft_strcmp("rra", r) == -10 )
+       opp1(a,rra);
+	else if (ft_strcmp("rrb", r) == -10)
+		opp1(b,rrb);
+	else if (ft_strcmp("rrr", r) == -10 )
+        opp2(a,b,rrr);
 	else if(er != 0)
 	{
 		write(1, "Error\n", 6);
@@ -74,7 +85,7 @@ void	cheker_mac(t_list **a, t_list **b)
 		r[error] = '\0';
        	compile(r,error,a,b);
 	}
-	if (check_order(*a) == -1 && *b == NULL)
+	if (*a && check_order(*a) == -1 && *b == NULL)
 	{
 		write(1, "OK\n", 3);
 		exit(0);
