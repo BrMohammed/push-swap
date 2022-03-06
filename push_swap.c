@@ -88,7 +88,7 @@ int	main(int argc, char **argv)
 	b = NULL;
 	temp = NULL;
 	var.z = 0;
-	if (argc > 2)
+	if (argc > 1)
 	{
 		check_and_creat_a(argv, &var, &a);
 		lenth_of_a(a, &var);
