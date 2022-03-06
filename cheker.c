@@ -72,7 +72,7 @@ void	cheker_mac(t_list **a, t_list **b)
 	{
 		error = read(0, r, 10240);
 		r[error] = '\0';
-       	compile(r,error);
+       	compile(r,error,a,b);
 	}
 	if (check_order(*a) == -1 && *b == NULL)
 	{
