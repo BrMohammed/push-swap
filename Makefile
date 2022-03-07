@@ -27,7 +27,7 @@ clean_bonus :
 fclean :
 	@$(RM) $(NAME) $(NAME1)
 
-re : fclean all bonus
+re : fclean all
 
 #  github bigin
 # git pull --rebase origin main

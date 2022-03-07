@@ -6,7 +6,7 @@
 /*   By: brmohamm <brmohamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 00:49:41 by brmohamm          #+#    #+#             */
-/*   Updated: 2022/03/07 01:05:09 by brmohamm         ###   ########.fr       */
+/*   Updated: 2022/03/07 01:43:12 by brmohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,16 +80,11 @@ void	cheker_mac(t_list **a, t_list **b)
 		free(r);
 		r = get_next_line(0);
 	}
+	free(r);
 	if (*a && check_order(*a) == -1 && *b == NULL)
-	{
 		write(1, "OK\n", 3);
-		exit(0);
-	}
 	else
-	{
 		write(1, "KO\n", 3);
-		exit(0);
-	}
 }
 
 int	main(int argc, char **argv)
