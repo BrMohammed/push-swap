@@ -6,7 +6,7 @@
 /*   By: brmohamm <brmohamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 03:07:44 by brmohamm          #+#    #+#             */
-/*   Updated: 2022/03/06 22:54:26 by brmohamm         ###   ########.fr       */
+/*   Updated: 2022/03/07 01:06:35 by brmohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 void	rb(t_list **b, int f)
 {
 	t_variabl	var;
-	
-	if((*b) && (*b)->next)
+
+	if ((*b) && (*b)->next)
 	{
 		var.temp = NULL;
 		var.temp = ft_lstlast(*b);
@@ -30,7 +30,6 @@ void	rb(t_list **b, int f)
 		if (f == 1)
 			write(1, "rb\n", 3);
 	}
-	
 }
 /*rra send the last one in 'a' to the first*/
 
@@ -38,7 +37,7 @@ void	rra(t_list **a, int f)
 {
 	t_variabl	var;
 
-	if((*a) && (*a)->next)
+	if ((*a) && (*a)->next)
 	{
 		var.temp = NULL;
 		var.temp = ft_lstlast_beforlast(*a);
@@ -51,7 +50,6 @@ void	rra(t_list **a, int f)
 		if (f == 1)
 			write(1, "rra\n", 4);
 	}
-	
 }
 /*rrb send the last one in 'b' to the first*/
 
@@ -59,7 +57,7 @@ void	rrb(t_list **b, int f)
 {
 	t_variabl	var;
 
-	if((*b) && (*b)->next)
+	if ((*b) && (*b)->next)
 	{
 		var.temp = NULL;
 		var.temp = ft_lstlast_beforlast(*b);
@@ -72,7 +70,6 @@ void	rrb(t_list **b, int f)
 		if (f == 1)
 			write(1, "rrb\n", 4);
 	}
-
 }
 /*--ss-- sa and sb*/
 

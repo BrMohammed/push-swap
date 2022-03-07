@@ -56,6 +56,11 @@ int		ft_isdigit(char *c);
 void	less_than_5(t_list **a, t_list **b, int f);
 void	more_than_5(t_list **a, t_list **b, t_variabl *var);
 char	*ft_strjoin(char const *s1, char const *s2);
+char	*get_next_line(int fd);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strdup( const char *src );
+size_t	ft_strlen(const char *str);
+int		ft_strchr(const char *str, int c);
 
 void	sa(t_list **a, int fals);
 void	sb(t_list **b, int fals);

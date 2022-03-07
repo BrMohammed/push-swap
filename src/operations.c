@@ -6,7 +6,7 @@
 /*   By: brmohamm <brmohamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 03:04:23 by brmohamm          #+#    #+#             */
-/*   Updated: 2022/03/06 22:54:55 by brmohamm         ###   ########.fr       */
+/*   Updated: 2022/03/07 01:06:41 by brmohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	sa(t_list **a, int f)
 {
 	t_variabl	var;
-	
-	if((*a) && (*a)->next)
+
+	if ((*a) && (*a)->next)
 	{
 		var.temp = NULL;
 		var.temp = *a;
@@ -29,7 +29,6 @@ void	sa(t_list **a, int f)
 		if (f == 1)
 			write(1, "sa\n", 3);
 	}
-	
 }
 /*sb revest the ferst and the seconde in 'b'*/
 
@@ -37,7 +36,7 @@ void	sb(t_list **b, int f)
 {
 	t_variabl	var;
 
-	if((*b) && (*b)->next)
+	if ((*b) && (*b)->next)
 	{
 		var.temp = NULL;
 		var.temp = *b;
@@ -50,7 +49,6 @@ void	sb(t_list **b, int f)
 		if (f == 1)
 			write(1, "sb\n", 3);
 	}
-	
 }
 /*pb send the first one in 'a' to the first in 'b'*/
 
@@ -58,7 +56,7 @@ void	pb(t_list **a, t_list **b, int f)
 {
 	t_variabl	var;
 
-	if(*a)
+	if (*a)
 	{
 		var.temp = NULL;
 		var.temp = *a;
@@ -73,7 +71,6 @@ void	pb(t_list **a, t_list **b, int f)
 		if (f == 1)
 			write(1, "pb\n", 3);
 	}
-	
 }
 /*pa send the first one in 'b' to the first in 'a'*/
 
@@ -81,7 +78,7 @@ void	pa(t_list **a, t_list **b, int f)
 {
 	t_variabl	var;
 
-	if((*b))
+	if ((*b))
 	{
 		var.temp = NULL;
 		var.temp = *b;
@@ -92,7 +89,6 @@ void	pa(t_list **a, t_list **b, int f)
 		if (f == 1)
 			write(1, "pa\n", 3);
 	}
-
 }
 /*ra send the first one in 'a' to the last*/
 
@@ -100,7 +96,7 @@ void	ra(t_list **a, int f)
 {
 	t_variabl	var;
 
-	if((*a) && (*a)->next)
+	if ((*a) && (*a)->next)
 	{
 		var.temp = NULL;
 		var.temp = ft_lstlast(*a);
@@ -113,5 +109,4 @@ void	ra(t_list **a, int f)
 		if (f == 1)
 			write(1, "ra\n", 3);
 	}
-	
 }

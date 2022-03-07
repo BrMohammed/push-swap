@@ -6,7 +6,7 @@
 /*   By: brmohamm <brmohamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 03:10:06 by brmohamm          #+#    #+#             */
-/*   Updated: 2022/03/06 23:06:21 by brmohamm         ###   ########.fr       */
+/*   Updated: 2022/03/07 01:09:22 by brmohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 void	rrr(t_list **a, t_list **b, int f)
 {
-	rra(a,0);
+	rra(a, 0);
 	if (*b != NULL)
-		rrb(b,0);
+		rrb(b, 0);
 	if (f == 1)
 		write(1, "rrr\n", 4);
 }
@@ -70,13 +70,13 @@ int	ft_isdigit(char *c)
 	n = 0;
 	if (c[0] == '\0')
 		return (1);
-	if(c[0] == '-')
+	if (c[0] == '-')
 		n = 1;
 	if ((c[0] == '-' && c[1] == '\0'))
 		return (1);
 	while (c[n])
 	{
-		if((c[0] == '-' && c[0] == c[n]) || c[n] == '-')
+		if ((c[0] == '-' && c[0] == c[n]) || c[n] == '-')
 			return (1);
 		if (ft_isdigit01(c[n]) == 0)
 			return (1);

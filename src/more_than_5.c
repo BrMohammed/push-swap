@@ -6,13 +6,13 @@
 /*   By: brmohamm <brmohamm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 03:01:24 by brmohamm          #+#    #+#             */
-/*   Updated: 2022/03/06 01:22:51 by brmohamm         ###   ########.fr       */
+/*   Updated: 2022/03/07 01:14:10 by brmohamm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	a_empti( t_list **a, t_list **b, t_variabl *var)
+void	empti(t_list **a, t_list **b, t_variabl *var)
 {
 	t_list	*temp;
 
@@ -20,7 +20,7 @@ void	a_empti( t_list **a, t_list **b, t_variabl *var)
 	{
 		temp = (*a);
 		if (*a && (*a)->index > var->f - (var->nn + var->bb + var->cc)
-				&& (*a)->index <= var->f - (var->bb + var->cc))
+			&& (*a)->index <= var->f - (var->bb + var->cc))
 		{
 			pb(a, b, 1);
 			rb(b, 1);
@@ -29,7 +29,7 @@ void	a_empti( t_list **a, t_list **b, t_variabl *var)
 		}
 		else
 		{
-			if(*a && temp->next)
+			if (*a && temp->next)
 			{
 				ra(a, 1);
 				temp = temp->next;
@@ -37,7 +37,20 @@ void	a_empti( t_list **a, t_list **b, t_variabl *var)
 		}
 	}
 	pb(a, b, 1);
-	
+}
+
+void	from_begin(t_list **a, t_list **b, t_variabl *var)
+{
+	while (var->g < var->y)
+	{
+		if ((*a))
+			empti(a, b, var);
+		var->g++;
+		if (var->gg == var->nn)
+			var->bb = 0;
+		if (var->gg == var->nn * 2)
+			var->cc = 0;
+	}
 }
 
 t_list	*best_way(t_list **b, t_variabl *var, t_list **temp)
@@ -107,19 +120,10 @@ void	more_than_5(t_list **a, t_list **b, t_variabl *var)
 	var->cc = var->z;
 	while ((*a))
 	{
-		while (var->g < var->y)
-		{
-			if ((*a))
-				a_empti(a, b, var);
-			var->g++;
-			if (var->gg == var->nn)
-				var->bb = 0;
-			if (var->gg == var->nn * 2)
-				var->cc = 0;
-		}
+		from_begin(a, b, var);
 		var->y = var->y + var->z;
 	}
-	while(*a)
+	while (*a)
 		pb(a, b, 1);
 	var->z = var->f;
 	send_from_b(a, b, var, &temp);

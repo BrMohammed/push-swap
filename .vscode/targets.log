@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Sun Mar  6 21:33:39 2022
+# Make data base, printed on Mon Mar  7 01:01:07 2022
 
 # Variables
 
@@ -38,35 +38,34 @@ _ = /usr/bin/make
 CFLAGS = -Wall -Wextra -Werror
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
-# makefile (from `Makefile', line 38)
+# makefile (from `Makefile', line 34)
 ADD = git add .
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n0000h5m00041d/T/vscode-ipc-47550630-26f0-4f56-861d-3e559bf5ea85.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n0000h5m00041d/T/vscode-ipc-0fb08848-aa55-4af3-b82a-acc38c482834.sock
 # environment
 VSCODE_CWD = /
 # environment
 Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.2GySNpXt0f/Render
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Library/Frameworks/Mono.framework/Versions/Current/Commands
-# makefile (from `Makefile', line 45)
+# makefile (from `Makefile', line 41)
 commit = git log --graph --oneline --decorate HEAD^..HEAD
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # makefile (from `Makefile', line 8)
-FILES2 = cheker.c
+FILES2 = cheker_bonus.c
 # environment
 VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
-# makefile (from `Makefile', line 40)
+# makefile (from `Makefile', line 36)
 read := @echo "Add Commit Plz !!" && read -p "-> " enter && git commit -m $${enter}
 # environment
 SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.rXTb2s0daU/Listeners
- 
 # automatic
 %F = $(notdir $%)
 # environment
@@ -101,7 +100,7 @@ MAKE = $(MAKE_COMMAND)
 MAKECMDGOALS := all
 # environment
 SHLVL = 1
-# makefile (from `Makefile', line 43)
+# makefile (from `Makefile', line 39)
 PU = git push
 # makefile (from `Makefile', line 4)
 CC = gcc
@@ -138,7 +137,7 @@ XPC_SERVICE_NAME = com.microsoft.VSCode.1220
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # makefile (from `Makefile', line 2)
-NAME1 = cheker
+NAME1 = checker
 # automatic
 +F = $(notdir $+)
 # environment
@@ -154,18 +153,17 @@ LC_ALL = C
 # automatic
 ^F = $(notdir $^)
 # makefile (from `Makefile', line 9)
-SRC_FILES = $(addprefix src/, lstnew.c ft_strcmp.c ft_atoi.c operations.c operations2.c operations3.c insert_the_index.c less_than_5.c more_than_5.c ft_strjoin.c)
+SRC_FILES = $(addprefix src/, lstnew.c ft_strcmp.c ft_atoi.c operations.c operations2.c operations3.c insert_the_index.c less_than_5.c more_than_5.c ft_strjoin.c get_next_line_utils.c get_next_line.c)
 # default
 SUFFIXES := 
 # default
- 
 .INCLUDE_DIRS = /usr/local/include
 # environment
 MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 9313
+VSCODE_PID = 55026
 # makefile (from `Makefile', line 7)
 FILES = push_swap.c 
 # variable set hash-table stats:
@@ -177,9 +175,9 @@ FILES = push_swap.c
 
 # Directories
 
-# . (device 16777227, inode 1937029): 20 files, no impossibilities.
+# . (device 16777227, inode 1937029): 16 files, no impossibilities.
 
-# 20 files, no impossibilities in 1 directories.
+# 16 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -190,7 +188,7 @@ FILES = push_swap.c
 # Not a target:
 push_swap.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-03-06 04:32:33
+#  Last modified 2022-03-07 01:00:21
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -205,19 +203,6 @@ all: push_swap
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-clean_cheker:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 27):
-	@$(RM) $(NAME1)
-	
-
-recheker: clean_cheker cheker
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
 # Not a target:
 .SUFFIXES:
 #  Implicit rule search has not been done.
@@ -228,7 +213,7 @@ push:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 48):
+#  commands to execute (from `Makefile', line 44):
 	@$(commit)
 	@$(ADD)
 	$(read)
@@ -238,18 +223,31 @@ push:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-03-06 21:33:32
+#  Last modified 2022-03-07 01:00:25
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-fclean: clean
+clean_bonus:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 30):
-	@$(RM) $(NAME)
+#  commands to execute (from `Makefile', line 25):
+	@$(RM) $(NAME1)
+	
+
+bonus: checker
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+fclean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 28):
+	@$(RM) $(NAME) $(NAME1)
 	
 
 # Not a target:
@@ -258,7 +256,15 @@ fclean: clean
 #  Modification time never checked.
 #  File has not been updated.
 
-re: fclean all
+checker: cheker_bonus.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 19):
+	$(CC) $(CFLAGS)  -o $(NAME1) $(FILES2) $(SRC_FILES)
+	
+
+re: fclean all bonus
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -267,31 +273,29 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 24):
+#  commands to execute (from `Makefile', line 22):
 	@$(RM) $(NAME)
 	
 
 push_swap: push_swap.c
 #  Implicit rule search has not been done.
-#  Last modified 2022-03-06 21:27:52
+#  Last modified 2022-03-07 01:00:30
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 18):
+#  commands to execute (from `Makefile', line 16):
 	$(CC) $(CFLAGS)  -o $(NAME) $(FILES) $(SRC_FILES)
 	
 
-cheker: push_swap.c cheker
+# Not a target:
+cheker_bonus.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 21):
-	$(CC) $(CFLAGS)  -o $(NAME1) $(FILES2) $(SRC_FILES)
-	
 
 # files hash-table stats:
-# Load=13/1024=1%, Rehash=0, Collisions=0/36=0%
+# Load=14/1024=1%, Rehash=0, Collisions=0/34=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -303,6 +307,6 @@ cheker: push_swap.c cheker
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sun Mar  6 21:33:39 2022
+# Finished Make data base on Mon Mar  7 01:01:07 2022
 
  

@@ -1,37 +1,33 @@
 NAME = push_swap
-NAME1 = cheker
+NAME1 = checker
 # -fsanitize=address
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 FILES = push_swap.c 
-FILES2 = cheker.c
-SRC_FILES=$(addprefix src/, lstnew.c ft_strcmp.c ft_atoi.c operations.c operations2.c operations3.c insert_the_index.c less_than_5.c more_than_5.c ft_strjoin.c)
+FILES2 = cheker_bonus.c
+SRC_FILES=$(addprefix src/, lstnew.c ft_strcmp.c ft_atoi.c operations.c operations2.c operations3.c insert_the_index.c less_than_5.c more_than_5.c ft_strjoin.c get_next_line_utils.c get_next_line.c)
 RM = rm -f
 
-#bash tester.sh ../../push-swap ...  
-
 all : $(NAME)
-cheker : $(NAME1)
+bonus : $(NAME1)
 
 $(NAME):  $(FILES)
 	$(CC) $(CFLAGS)  -o $(NAME) $(FILES) $(SRC_FILES)
 
-$(NAME1):  $(FILES)
+$(NAME1):  $(FILES2)
 	$(CC) $(CFLAGS)  -o $(NAME1) $(FILES2) $(SRC_FILES)
 
 clean :
 	@$(RM) $(NAME)
 
-clean_cheker :
+clean_bonus :
 	@$(RM) $(NAME1)
 
-fclean : clean
-	@$(RM) $(NAME)
+fclean :
+	@$(RM) $(NAME) $(NAME1)
 
-re : fclean all
-
-recheker : clean_cheker cheker
+re : fclean all bonus
 
 #  github bigin
 # git pull --rebase origin main
